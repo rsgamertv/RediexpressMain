@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projecttoreview/Boards/OnBoard1.dart';
 import 'package:projecttoreview/Boards/OnBoard2.dart';
+import 'package:projecttoreview/Boards/OnBoard3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,32 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        textTheme: const TextTheme(
-  titleSmall: TextStyle(
-      color: Colors.blueAccent,
-      fontSize: 14,
-      fontWeight: FontWeight.bold
-  ),
-  titleMedium: TextStyle(
-      color: Colors.white,
-      fontSize: 14,
-      fontWeight: FontWeight.bold
-  ),
-  bodySmall: TextStyle(
-    color: Colors.blueAccent,
-    fontSize: 25,
-    fontWeight: FontWeight.bold
-  ),
-  bodyMedium: TextStyle(
-    color: Colors.black,
-    fontSize: 20,
-  )
-
-  )
+        primaryColor: Colors.blueAccent,
       ),
       routes: {
           '/':(context) => OnBoard1(),
           '/OnBoard2':(context) => OnBoard2(),
+          '/OnBoard3': (context) => OnBoard3(),
       },
     );
   }

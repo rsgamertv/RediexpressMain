@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:projecttoreview/ThemesFolder/style.dart';
+import 'package:projecttoreview/ThemesFolder/text_styles.dart';
+
 class OnBoard1 extends StatelessWidget { 
    @override
   Widget build(BuildContext context) {
@@ -16,11 +18,11 @@ class OnBoard1 extends StatelessWidget {
             SizedBox(height: 30,),
             Container(
               width: 300,
-              child: Text('Quick Delivery At Your Doorstep', style: Theme.of(context).textTheme.bodySmall, textAlign: TextAlign.center,),
+              child: Text('Quick Delivery At Your Doorstep', style: large_blue(), textAlign: TextAlign.center,),
             ),
-                  Container(
+            Container(
               width: 300,
-              child: Text('Enjoy quick pick-up and delivery to your destination', style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center,),
+              child: Text('Enjoy quick pick-up and delivery to your destination', style: medium_black(), textAlign: TextAlign.center,),
             ),
             SizedBox(height: 80,),
             Container(
@@ -32,7 +34,7 @@ class OnBoard1 extends StatelessWidget {
                         width: 120,
                         height: 50,
                         child:
-                        TextButton(onPressed: (){}, child: Text('Skip' , style: Theme.of(context).textTheme.titleSmall))
+                        TextButton(onPressed: (){}, child: Text('Skip' , style: button_blue()))
                       ),
                       Container(
                         decoration: filledboxdecoration(),
@@ -40,7 +42,7 @@ class OnBoard1 extends StatelessWidget {
                         height: 50,
                         child: TextButton(onPressed: (){
                             Navigator.of(context).pushNamed('/OnBoard2');
-                        }, child: Text('Next', style: Theme.of(context).textTheme.titleMedium,)),
+                        }, child: Text('Next', style: button_white())),
                       )
                     ],
                 ),
