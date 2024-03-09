@@ -1,5 +1,5 @@
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
-import 'package:RediExpress/ThemesFolder/style.dart';
+import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:flutter/material.dart';
 
 class Authorization extends StatefulWidget{
