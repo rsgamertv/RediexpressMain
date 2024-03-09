@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:RediExpress/ThemesFolder/style.dart';
+import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 
 class RegistrationWindow extends StatefulWidget{

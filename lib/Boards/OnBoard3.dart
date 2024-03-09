@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:RediExpress/ThemesFolder/style.dart';
+import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 
 class OnBoard3 extends StatelessWidget{
