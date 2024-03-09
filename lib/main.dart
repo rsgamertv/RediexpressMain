@@ -1,9 +1,10 @@
 import 'package:RediExpress/Authorization/Authorization.dart';
+import 'package:RediExpress/Authorization/ForgotPassword.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/Boards/OnBoard1.dart';
 import 'package:RediExpress/Boards/OnBoard2.dart';
 import 'package:RediExpress/Boards/OnBoard3.dart';
-import 'package:RediExpress/Registration/Registration.dart';
+import 'package:RediExpress/Authorization/Registration.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           '/OnBoard3': (context) => OnBoard3(),
           '/Registration': (context) => Registration(),
           '/Authorization':(context) => Authorization(),
+          '/ForgotPassword':(context) => ForgotPassword()
       },
     );
   }
