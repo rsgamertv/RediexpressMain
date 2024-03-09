@@ -29,7 +29,9 @@ class OnBoard3 extends StatelessWidget{
             width: 350,
             height: 50,
             decoration: filledboxdecoration(),
-            child: TextButton(onPressed: (){}, child: Text('Sign Up', style: button_white()),)
+            child: TextButton(onPressed: (){
+              Navigator.of(context).pushNamed('/Registration');
+            }, child: Text('Sign Up', style: button_white()),)
           ),
           SizedBox(height: 5),
           Container(
@@ -40,7 +42,9 @@ class OnBoard3 extends StatelessWidget{
                   child: Text('Already have an account?', style: small_grey()),
                 ),
                 Container(
-                  child: TextButton(onPressed: (){}, child: Text('Sign in', style: button_blue(),)),
+                  child: TextButton(onPressed: (){
+
+                  }, child: Text('Sign in', style: button_blue(),)),
                 )
               ],
             ),

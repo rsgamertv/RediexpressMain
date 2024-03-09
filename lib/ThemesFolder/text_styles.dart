@@ -31,6 +31,13 @@ TextStyle medium_black(){
   );
 }
 
+TextStyle large_black(){
+  return TextStyle(
+    color: Colors.black,
+    fontSize: 25,
+  );
+}
+
 TextStyle small_grey(){
   return TextStyle(
     color: Colors.grey,
