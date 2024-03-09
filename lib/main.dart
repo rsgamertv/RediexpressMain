@@ -1,3 +1,4 @@
+import 'package:RediExpress/Authorization/Authorization.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/Boards/OnBoard1.dart';
 import 'package:RediExpress/Boards/OnBoard2.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
           '/OnBoard2':(context) => OnBoard2(),
           '/OnBoard3': (context) => OnBoard3(),
           '/Registration': (context) => RegistrationWindow(),
+          '/Authorization':(context) => Authorization(),
       },
     );
   }

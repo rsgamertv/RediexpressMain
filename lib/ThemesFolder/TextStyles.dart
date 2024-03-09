@@ -41,6 +41,6 @@ TextStyle large_black(){
 TextStyle small_grey(){
   return TextStyle(
     color: Colors.grey,
-    fontSize: 14,
+    fontSize: 18,
   );
 }
