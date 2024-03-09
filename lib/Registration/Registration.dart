@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 
-class RegistrationWindow extends StatefulWidget{
+class Registration extends StatefulWidget{
   @override
-  State<RegistrationWindow> createState() => RegistrationWindowState();
+  State<Registration> createState() => RegistrationWindowState();
 }
 
-class RegistrationWindowState extends State<RegistrationWindow> {
+class RegistrationWindowState extends State<Registration> {
   bool passwordVisible = false;
   bool? isChecked = false;
 
@@ -21,7 +21,7 @@ class RegistrationWindowState extends State<RegistrationWindow> {
       body: Container(
         padding: EdgeInsets.fromLTRB(25, 40, 25, 0),
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text('Create an account', style: large_black()),
               Text('Complete the sign up process to get started', style: small_grey()),
@@ -78,6 +78,7 @@ class RegistrationWindowState extends State<RegistrationWindow> {
               ),
               Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Checkbox(value: isChecked, onChanged: (newBool){setState(() {
                     isChecked = newBool;
@@ -90,7 +91,6 @@ class RegistrationWindowState extends State<RegistrationWindow> {
               Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
               Container(
                 decoration: filledboxdecoration(),
-                width: 700,
                 height: 50,
                 child: TextButton(
                   onPressed: (){},

@@ -1,4 +1,4 @@
-import 'package:RediExpress/Boards/RegistrationWindow.dart';
+import 'package:RediExpress/Registration/Registration.dart';
 import 'package:flutter/material.dart';
 
 BoxDecoration filledboxdecoration(){

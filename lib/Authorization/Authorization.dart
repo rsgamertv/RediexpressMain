@@ -26,8 +26,6 @@ class _AuthorizationState extends State<Authorization> {
                     Text('Password', style: small_grey()),
                     Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                     TextField(decoration:field_decoration('***********')),
-
-
                 ],
             ),
 
