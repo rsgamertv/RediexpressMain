@@ -22,16 +22,48 @@ class _AuthorizationState extends State<Authorization> {
                     Text('Email Adress', style: small_grey()),
                     Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                     TextField(decoration:field_decoration('***********@mail.com')),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0)),
+                    Padding(padding: EdgeInsets.fromLTRB(0, 25, 0, 0)),
                     Text('Password', style: small_grey()),
                     Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                     TextField(decoration:field_decoration('***********')),
-
-
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                            child: Row(
+                                children: [
+                                   Checkbox(value: false, onChanged: null),
+                                   Text('Remember password', style: smallest_grey(),),
+                              ],
+                            ),
+                        ),
+                         Text('Forgot Password?', style: button_blue(),)
+                      ]
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                    Container(
+                    width: 350,
+                    height: 50,
+                     decoration: filledboxdecoration(),
+                       child: TextButton(onPressed: (){
+                    // Navigator.of(context).pushNamed('/Registration');
+                     }, child: Text('Log in', style: button_white()),)
+                      ),
+                        ],
+                    ),
+                      Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                            Text('Already have an account?' , style: smallest_grey(),),
+                            TextButton(onPressed: () {
+                            }, child: Text('Sign Up', style: button_blue(),))
+                        ],
+                      )
                 ],
             ),
-
-
       ),
     );
   }
