@@ -1,3 +1,4 @@
+import 'package:RediExpress/Boards/RegistrationWindow.dart';
 import 'package:flutter/material.dart';
 
 BoxDecoration filledboxdecoration(){
@@ -21,5 +22,17 @@ InputDecoration field_decoration(String hint){
   return InputDecoration(
     border: OutlineInputBorder(),
     hintText: hint,
+  );
+}
+
+InputDecoration password_field_decoration(String hint, bool passwordVisible, Function(bool) callback){
+  return InputDecoration(
+    border: OutlineInputBorder(),
+    hintText: hint,
+    suffixIcon: IconButton(
+      icon: Icon(
+        passwordVisible ? Icons.visibility : Icons.visibility_off),
+        onPressed: () { passwordVisible = !passwordVisible;  callback(passwordVisible); },
+    )
   );
 }

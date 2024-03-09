@@ -24,6 +24,13 @@ TextStyle large_blue(){
   );
 }
 
+TextStyle small_black(){
+  return TextStyle(
+    color: Colors.black,
+    fontSize: 14
+  );
+}
+
 TextStyle medium_black(){
   return TextStyle(
     color: Colors.black,
@@ -41,6 +48,13 @@ TextStyle large_black(){
 TextStyle small_grey(){
   return TextStyle(
     color: Colors.grey,
+    fontSize: 14,
+  );
+}
+
+TextStyle small_orange(){
+  return TextStyle(
+    color: Colors.orange,
     fontSize: 14,
   );
 }
