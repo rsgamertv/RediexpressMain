@@ -4,7 +4,6 @@ import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import '../ThemesFolder/Style.dart';
 
 class Authorization extends StatefulWidget{
   @override
@@ -58,7 +57,10 @@ class _AuthorizationState extends State<Authorization> {
                               ],
                             ),
                         ),
-                         Text('Forgot Password?', style: button_blue(),)
+                         TextButton(onPressed: (){
+                              Navigator.of(context).pushNamed('/ForgotPassword');
+                         }, 
+                         child: Text('Forgot Password?',style: button_blue(),))
                       ]
                     ),
                     Row(

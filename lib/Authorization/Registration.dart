@@ -18,8 +18,9 @@ class RegistrationWindowState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Container(
-        padding: EdgeInsets.fromLTRB(25, 40, 25, 0),
+        padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -102,7 +103,7 @@ class RegistrationWindowState extends State<Registration> {
                 children: [
                   Padding(padding: EdgeInsets.fromLTRB(0, 35, 0, 0)),
                   Text('Already have an account? ', style: small_grey()),
-                  Text('Sign in', style: button_blue()),
+                  TextButton(onPressed: null, child: Text('Sign in' , style: button_blue(),))
                 ],
               ),
             ],
