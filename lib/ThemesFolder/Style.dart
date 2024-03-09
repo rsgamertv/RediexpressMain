@@ -31,12 +31,13 @@ InputDecoration field_decoration(String hint){
 
 InputDecoration password_field_decoration(String hint, bool passwordVisible, Function(bool) callback){
   return InputDecoration(
-    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+    border: OutlineInputBorder(),
     hintText: hint,
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(
         color: Colors.blueAccent
-      ),borderRadius: BorderRadius.circular(10)
+      ),
+      borderRadius: BorderRadius.circular(10)
     ),
     suffixIcon: IconButton(
       icon: Icon(

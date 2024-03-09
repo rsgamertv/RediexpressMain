@@ -82,7 +82,7 @@ class RegistrationWindowState extends State<Registration> {
                 children: [
                   Checkbox(value: isChecked, onChanged: (newBool){setState(() {
                     isChecked = newBool;
-                  });}),
+                  });}, activeColor: Colors.blueAccent,),
                   Padding(padding: EdgeInsets.fromLTRB(15, 0, 0, 0)),
                   Text('By ticking this box, you agree to our ', style: small_grey()),
                   Text('Terms ', style: small_orange()),

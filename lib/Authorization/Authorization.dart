@@ -1,6 +1,8 @@
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
-import 'package:RediExpress/ThemesFolder/style.dart';
+import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:flutter/material.dart';
+
+import '../ThemesFolder/Style.dart';
 
 class Authorization extends StatefulWidget{
   @override
@@ -39,9 +41,9 @@ class _AuthorizationState extends State<Authorization> {
                       children: [
                         Container(
                             child: Row(
-                                children: [
-                                   Checkbox(value: false, onChanged: null),
-                                   Text('Remember password', style: small_grey(),),
+                              children: [
+                                Checkbox(value: false, onChanged: null),
+                                Text('Remember password', style: small_grey(),),
                               ],
                             ),
                         ),
@@ -52,14 +54,14 @@ class _AuthorizationState extends State<Authorization> {
                       mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                     Container(
-                    width: 350,
-                    height: 50,
-                     decoration: filledboxdecoration(),
-                       child: TextButton(onPressed: (){
-                    // Navigator.of(context).pushNamed('/Registration');
-                     }, child: Text('Log in', style: button_white()),)
-                      ),
-                        ],
+                      width: 350,
+                      height: 50,
+                       decoration: filledboxdecoration(),
+                         child: TextButton(onPressed: (){
+                      // Navigator.of(context).pushNamed('/Registration');
+                       }, child: Text('Log in', style: button_white()),)
+                        ),
+                          ],
                     ),
                       Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
                       Row(
