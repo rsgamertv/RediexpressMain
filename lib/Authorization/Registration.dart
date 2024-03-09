@@ -18,9 +18,8 @@ class RegistrationWindowState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Container(
-        padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+        padding: EdgeInsets.fromLTRB(25, 50, 25, 0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -78,16 +77,22 @@ class RegistrationWindowState extends State<Registration> {
                 ],
               ),
               Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
-              Row(
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                         Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Checkbox(value: isChecked, onChanged: (newBool){setState(() {
                     isChecked = newBool;
                   });}, activeColor: Colors.blueAccent,),
-                  Padding(padding: EdgeInsets.fromLTRB(15, 0, 0, 0)),
                   Text('By ticking this box, you agree to our ', style: small_grey()),
                   Text('Terms ', style: small_orange()),
                 ],
+              ),
+                  ],
+
               ),
               Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
               Container(
@@ -101,9 +106,11 @@ class RegistrationWindowState extends State<Registration> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(padding: EdgeInsets.fromLTRB(0, 35, 0, 0)),
                   Text('Already have an account? ', style: small_grey()),
-                  TextButton(onPressed: null, child: Text('Sign in' , style: button_blue(),))
+                  TextButton(onPressed: (){
+                      Navigator.of(context).pushNamed('/Authorization');
+
+                  }, child: Text('Sign in' , style: button_blue(),))
                 ],
               ),
             ],

@@ -2,6 +2,7 @@ import 'package:RediExpress/Models/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 
 class Authorization extends StatefulWidget{
@@ -63,12 +64,10 @@ class _AuthorizationState extends State<Authorization> {
                          child: Text('Forgot Password?',style: button_blue(),))
                       ]
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                     Container(
-                      width: 350,
-                      height: 50,
                        decoration: filledboxdecoration(),
                          child: TextButton(onPressed: authorize, child: Text('Log in', style: button_white()),)
                         ),

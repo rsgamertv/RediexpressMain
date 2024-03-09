@@ -18,7 +18,8 @@ BoxDecoration decoration(){
 }
 InputDecoration field_decoration(String hint){
   return InputDecoration(
-    border: OutlineInputBorder(),
+    border: OutlineInputBorder(
+    ),
     hintText: hint,
     focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(

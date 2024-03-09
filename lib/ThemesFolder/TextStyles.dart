@@ -48,13 +48,13 @@ TextStyle large_black(){
 TextStyle small_grey(){
   return TextStyle(
     color: Colors.grey,
-    fontSize: 14,
+    fontSize: 13,
   );
 }
 
 TextStyle small_orange(){
   return TextStyle(
     color: Colors.orange,
-    fontSize: 14,
+    fontSize: 13,
   );
 }
