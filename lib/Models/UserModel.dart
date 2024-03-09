@@ -1,27 +1,29 @@
+import 'package:dio/dio.dart';
+
 class UserModel{
-  UserModel({
-    required this.id,
-    required this.email,
-    required this.password,
-    required this.name,
-    required this.phoneNumber
-  });
+  Future<bool> checkIfExists() async{
+    final response = await Dio().get(
+      'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
+    );
 
-  int id;
-  String email;
-  String password;
-  String name;
-  String phoneNumber;
+    final json = response.data as Map<String, dynamic>;
 
-  factory UserModel.fromJson(Map<String, dynamic> json){
-    return UserModel(id: json["Id"], email: json["Email"], password: json["Password"], name: json["Name"], phoneNumber: json["PhoneNumber"]);
+    if(json["response"] == "User not found"){
+      return false;
+    }
+
+    this.id = json["data"]["Id"];
+    this.email = json["data"]["Email"];
+    this.password = json["data"]["Password"];
+    this.name = json["data"]["Name"];
+    this.phoneNumber = json["data"]["PhoneNumber"];
+
+    return true;
   }
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
-      "Id": id,
-      "Email": email,
-      "Password": password,
-      "Name": name,
-      "PhoneNumber": phoneNumber,
-    };
+  int? id;
+  String? email;
+  String? password;
+  String? name;
+  String? phoneNumber;
 }
