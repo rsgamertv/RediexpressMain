@@ -33,7 +33,10 @@ class ForgotPassword extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                           Text('Remember password? Back to', style: small_grey(),),
-                          Text('Sign in', style: button_blue(),)
+                          TextButton(onPressed: (){
+                            Navigator.of(context).pushNamed('/Authorization');
+                          },
+                           child: Text('Sign in', style: button_blue(),))
                       ],
                   )
             ],

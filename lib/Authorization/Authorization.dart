@@ -46,6 +46,7 @@ class _AuthorizationState extends State<Authorization> {
                       obscureText: passwordVisible,
                       controller: passwordController,
                     ),
+                    Padding(padding: EdgeInsets.fromLTRB(0,15, 0 , 0 )),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
