@@ -39,7 +39,7 @@ class OnBoard3 extends StatelessWidget{
             child: Row(
               children: [
                 Container(
-                  child: Text('Already have an account?', style: smallest_grey()),
+                  child: Text('Already have an account?', style: small_grey()),
                 ),
                 Container(
                   child: TextButton(onPressed: (){

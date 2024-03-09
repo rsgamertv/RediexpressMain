@@ -33,7 +33,7 @@ class _AuthorizationState extends State<Authorization> {
                             child: Row(
                                 children: [
                                    Checkbox(value: false, onChanged: null),
-                                   Text('Remember password', style: smallest_grey(),),
+                                   Text('Remember password', style: small_grey(),),
                               ],
                             ),
                         ),
@@ -57,7 +57,7 @@ class _AuthorizationState extends State<Authorization> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                            Text('Already have an account?' , style: smallest_grey(),),
+                            Text('Already have an account?' , style: small_grey(),),
                             TextButton(onPressed: () {
                             }, child: Text('Sign Up', style: button_blue(),))
                         ],
