@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:projecttoreview/Boards/OnBoard1.dart';
-import 'package:projecttoreview/Boards/OnBoard2.dart';
-import 'package:projecttoreview/Boards/OnBoard3.dart';
-import 'package:projecttoreview/Boards/registration_window.dart';
+import 'package:RediExpress/Boards/OnBoard1.dart';
+import 'package:RediExpress/Boards/OnBoard2.dart';
+import 'package:RediExpress/Boards/OnBoard3.dart';
+import 'package:RediExpress/Boards/registration_window.dart';
 
 void main() {
   runApp(const MyApp());

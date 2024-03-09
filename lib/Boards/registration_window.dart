@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projecttoreview/ThemesFolder/style.dart';
-import 'package:projecttoreview/ThemesFolder/text_styles.dart';
+import 'package:RediExpress/ThemesFolder/style.dart';
+import 'package:RediExpress/ThemesFolder/text_styles.dart';
 
 class registration_window extends StatefulWidget{
   @override
