@@ -22,6 +22,12 @@ InputDecoration field_decoration(String hint){
   return InputDecoration(
     border: OutlineInputBorder(),
     hintText: hint,
+    focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.blueAccent
+        ),
+      borderRadius: BorderRadius.circular(10)
+    )
   );
 }
 

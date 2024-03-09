@@ -43,7 +43,7 @@ class OnBoard3 extends StatelessWidget{
                 ),
                 Container(
                   child: TextButton(onPressed: (){
-
+                      Navigator.of(context).pushNamed('/Authorization');
                   }, child: Text('Sign in', style: button_blue(),)),
                 )
               ],
