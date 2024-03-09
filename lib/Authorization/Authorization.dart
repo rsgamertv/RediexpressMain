@@ -8,6 +8,12 @@ class Authorization extends StatefulWidget{
 class _AuthorizationState extends State<Authorization> {
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return Scaffold(
+      body: Container(
+
+
+
+      ),
+    );
   }
 }

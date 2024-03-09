@@ -19,9 +19,9 @@ class RegistrationWindowState extends State<RegistrationWindow> {
               Text('Create an account', style: large_black()),
               Text('Complete the sign up process to get started', style: small_grey()),
               Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0)),
-                  Text('Full name', style: small_grey()),
-                  Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                  TextField(decoration:field_decoration('Ivan Ivanov'))
+              Text('Full name', style: small_grey()),
+              Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+              TextField(decoration:field_decoration('Ivan Ivanov'))
                 ],
               )
           ),
