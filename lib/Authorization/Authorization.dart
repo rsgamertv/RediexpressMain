@@ -2,7 +2,6 @@ import 'package:RediExpress/Models/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 
 class Authorization extends StatefulWidget{
@@ -99,11 +98,10 @@ class _AuthorizationState extends State<Authorization> {
     print(userModel.password);
 
     if (await userModel.checkIfExists()) {
-      Fluttertoast.showToast(msg: 'Logged in');
+      print('Accept');
     }
     else {
-
-      Fluttertoast.showToast(msg: 'Coculdn\'t log in');
+      print('denie');
     }
   }
 }
