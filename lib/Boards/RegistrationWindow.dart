@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:RediExpress/ThemesFolder/style.dart';
-import 'package:RediExpress/ThemesFolder/text_styles.dart';
+import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 
-class registration_window extends StatefulWidget{
+class RegistrationWindow extends StatefulWidget{
   @override
-  State<registration_window> createState() => _registration_windowState();
+  State<RegistrationWindow> createState() => RegistrationWindowState();
 }
 
-class _registration_windowState extends State<registration_window> {
+class RegistrationWindowState extends State<RegistrationWindow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
