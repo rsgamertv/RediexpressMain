@@ -33,13 +33,13 @@ class OnBoard3 extends StatelessWidget{
               Navigator.of(context).pushNamed('/Registration');
             }, child: Text('Sign Up', style: button_white()),)
           ),
-          SizedBox(height: 5),
+          SizedBox(height: 10),
           Container(
             width: 250,
             child: Row(
               children: [
                 Container(
-                  child: Text('Already have an account?', style: small_grey()),
+                  child: Text('Already have an account?', style: smallest_grey()),
                 ),
                 Container(
                   child: TextButton(onPressed: (){
