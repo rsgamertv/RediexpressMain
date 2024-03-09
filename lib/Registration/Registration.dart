@@ -78,14 +78,14 @@ class RegistrationWindowState extends State<Registration> {
               ),
               Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Checkbox(value: isChecked, onChanged: (newBool){setState(() {
                     isChecked = newBool;
                   });}),
                   Padding(padding: EdgeInsets.fromLTRB(15, 0, 0, 0)),
                   Text('By ticking this box, you agree to our ', style: small_grey()),
-                  Text('Terms and conditions and private policy', style: small_orange()),
+                  Text('Terms ', style: small_orange()),
                 ],
               ),
               Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),

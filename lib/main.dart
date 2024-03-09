@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blueAccent,
       ),
+      debugShowCheckedModeBanner: false,
       routes: {
           '/':(context) => OnBoard1(),
           '/OnBoard2':(context) => OnBoard2(),

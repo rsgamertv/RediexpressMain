@@ -8,6 +8,12 @@ class Authorization extends StatefulWidget{
 }
 
 class _AuthorizationState extends State<Authorization> {
+    bool passwordVisible = false;
+  bool? isChecked = false;
+
+  void updatePasswordType(bool passwordVisible) => setState(() {
+    this.passwordVisible = passwordVisible;
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +31,9 @@ class _AuthorizationState extends State<Authorization> {
                     Padding(padding: EdgeInsets.fromLTRB(0, 25, 0, 0)),
                     Text('Password', style: small_grey()),
                     Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                    TextField(decoration:field_decoration('***********')),
+                    TextField(decoration:password_field_decoration('***********', passwordVisible, updatePasswordType),
+                    obscureText: passwordVisible,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -59,6 +67,7 @@ class _AuthorizationState extends State<Authorization> {
                         children: [
                             Text('Already have an account?' , style: small_grey(),),
                             TextButton(onPressed: () {
+                              Navigator.of(context).pushNamed('/Registration');
                             }, child: Text('Sign Up', style: button_blue(),))
                         ],
                       )
