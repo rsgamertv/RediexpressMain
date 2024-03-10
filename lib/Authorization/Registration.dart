@@ -147,7 +147,7 @@ class RegistrationWindowState extends State<Registration> {
     userModel.phoneNumber = _phoneNumberController.text.toString();
 
     if (await userModel.register()) {
-      print('user added');
+      Navigator.of(context).pushNamed('/Authorization');
     }
     else {
       print('denie');

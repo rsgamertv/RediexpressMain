@@ -42,6 +42,18 @@ class UserModel{
       return false;
     }
   }
+  Future <bool> forgotPassword() async{
+    final response = await Dio().get(
+          'http://83.147.245.57/user_ask_reset_password?email=${this.email}'
+           );
+           final jsonResponse = response.data as Map<String, dynamic>;
+           if(jsonResponse['reponse'] == 'Could not reset password'){
+            return false;
+           }
+           else{
+            return true;
+           }
+  }
 
   int? id;
   String? email,password,name,phoneNumber;

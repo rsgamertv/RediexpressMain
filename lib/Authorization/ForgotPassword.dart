@@ -1,8 +1,16 @@
+import 'package:RediExpress/Models/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/ThemesFolder/Style.dart';
 
-class ForgotPassword extends StatelessWidget{
+class ForgotPassword extends StatefulWidget{
+  @override
+  State<ForgotPassword> createState() => _ForgotPasswordState();
+}
+
+class _ForgotPasswordState extends State<ForgotPassword> {
+        UserModel userModel = new UserModel();
+        final _emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +27,18 @@ class ForgotPassword extends StatelessWidget{
                   children: [
                     Text('Email address', style: small_grey()),
                   Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                  TextField(decoration:field_decoration('********@mail.com'))
+                  TextField(
+                    controller: _emailController,
+                    decoration:field_decoration('********@mail.com'))
                   ],
                   ),
                   Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0)),
                   Container(
                     decoration: filledboxdecoration(),
                       child: 
-                      TextButton(onPressed: null, child: Text('Send OTP', style: button_white(),),)
+                      TextButton(onPressed: () {
+                        forgotPassword();
+                      }, child: Text('Send OTP', style: button_white(),),)
                   ),
                   Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
                   Row(
@@ -43,5 +55,14 @@ class ForgotPassword extends StatelessWidget{
           ),
         ),
     );
+  }
+    Future<void> forgotPassword() async {
+        userModel.email = _emailController.text.toString();
+    if (await userModel.forgotPassword()) {
+      print('Письмо отправлено');
+    }
+    else{
+      print('не вышло');
+    }
   }
 }
