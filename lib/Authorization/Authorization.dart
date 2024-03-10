@@ -64,10 +64,13 @@ class _AuthorizationState extends State<Authorization> {
                          child: Text('Forgot Password?',style: button_blue(),))
                       ]
                     ),
-                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                     Container(
+                      width: 3,
+                      height: 50,
                        decoration: filledboxdecoration(),
                          child: TextButton(onPressed: authorize, child: Text('Log in', style: button_white()),)
                         ),
