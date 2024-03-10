@@ -52,6 +52,13 @@ TextStyle small_grey(){
   );
 }
 
+TextStyle small_blue(){
+  return TextStyle(
+    color: Colors.blueAccent,
+    fontSize: 13,
+  );
+}
+
 TextStyle small_orange(){
   return TextStyle(
     color: Colors.orange,

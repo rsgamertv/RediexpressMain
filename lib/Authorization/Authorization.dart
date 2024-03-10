@@ -93,14 +93,8 @@ class _AuthorizationState extends State<Authorization> {
     userModel.email = emailController.text.toString();
     userModel.password = passwordController.text.toString();
 
-    print(userModel.email);
-    print(userModel.password);
-
     if (await userModel.checkIfExists()) {
-      print('Accept');
-    }
-    else {
-      print('denie');
+      Navigator.of(context).pushNamed('/MainPage');
     }
   }
 }
