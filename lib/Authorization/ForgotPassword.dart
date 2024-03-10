@@ -59,7 +59,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     Future<void> forgotPassword() async {
         userModel.email = _emailController.text.toString();
     if (await userModel.forgotPassword()) {
-      print('Письмо отправлено');
+      Navigator.of(context).pushNamed('/OtpPassword');
     }
     else{
       print('не вышло');

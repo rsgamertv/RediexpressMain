@@ -1,5 +1,6 @@
 import 'package:RediExpress/Authorization/Authorization.dart';
 import 'package:RediExpress/Authorization/ForgotPassword.dart';
+import 'package:RediExpress/Authorization/OTPPassword.dart';
 import 'package:RediExpress/Main/MainPage.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/Boards/OnBoard1.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           '/Authorization':(context) => Authorization(),
           '/ForgotPassword':(context) => ForgotPassword(),
           '/MainPage': (context) => MainPage(),
+          '/OtpPassword':(context) => OTPPassword(),
       },
       initialRoute: '/ForgotPassword',
     );
