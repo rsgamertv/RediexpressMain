@@ -9,15 +9,15 @@ class UserModel{
     );
     final json = response.data as Map<String, dynamic>;
 
-    if(json["response"] == "User not found"){
+    if(json['success'] == false){
       return false;
     }
 
-    this.id = json["data"]["Id"];
-    this.email = json["data"]["Email"];
-    this.password = json["data"]["Password"];
-    this.name = json["data"]["Name"];
-    this.phoneNumber = json["data"]["PhoneNumber"];
+    this.id = json['data']['Id'];
+    this.email = json['data']['Email'];
+    this.password = json['data']['Password'];
+    this.name = json['data']['Name'];
+    this.phoneNumber = json['data']['PhoneNumber'];
 
     return true;
   }
@@ -35,26 +35,32 @@ class UserModel{
 
     final jsonResponse = response.data as Map<String,dynamic>;
 
-    if(jsonResponse['response'] == 'User added') {
+    if(jsonResponse['success'] == true) {
       return true;
     }
     else{
       return false;
     }
   }
-  Future <bool> forgotPassword() async{
+
+  Future<bool> forgotPassword() async{
     final response = await Dio().get(
           'http://83.147.245.57/user_ask_reset_password?email=${this.email}'
-           );
-           final jsonResponse = response.data as Map<String, dynamic>;
-           if(jsonResponse['reponse'] == 'Could not reset password'){
-            return false;
-           }
-           else{
-            return true;
-           }
+     );
+
+    final jsonResponse = response.data as Map<String, dynamic>;
+
+    if(jsonResponse['success'] == true){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   int? id;
-  String? email,password,name,phoneNumber;
+  String? email;
+  String? password;
+  String? name;
+  String? phoneNumber;
 }
