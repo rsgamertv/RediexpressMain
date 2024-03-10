@@ -18,24 +18,31 @@ class UserModel{
     this.password = json["data"]["Password"];
     this.name = json["data"]["Name"];
     this.phoneNumber = json["data"]["PhoneNumber"];
+
     return true;
   }
-  int? id;
-  String? email,password,name,phoneNumber;
+
   Future<bool> register() async{
-     Map<String,String> json = Map<String,String>();
-     json['Email'] = email! ; 
-     json['Password'] = password!;
-     json['Name'] = name!;
-     json['PhoneNumber'] = phoneNumber!;
+    final json = new Map<String,String>();
+    json['Email'] = email!;
+    json['Password'] = password!;
+    json['Name'] = name!;
+    json['PhoneNumber'] = phoneNumber!;
+
     final response = await Dio().post(
-      'http://83.147.245.57/user_add' , data: json
+      'http://83.147.245.57/user_add', data: json
     );
-    final responseRegistration = response.data as Map<String,String>;
-    if(responseRegistration["response"] == "User added") {
+
+    final jsonResponse = response.data as Map<String,dynamic>;
+
+    if(jsonResponse['response'] == 'User added') {
       return true;
     }
     else{
-      return false;}
+      return false;
+    }
   }
+
+  int? id;
+  String? email,password,name,phoneNumber;
 }

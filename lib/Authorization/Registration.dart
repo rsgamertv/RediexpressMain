@@ -12,21 +12,17 @@ class Registration extends StatefulWidget{
 class RegistrationWindowState extends State<Registration> {
   bool passwordVisible = false;
   bool? isChecked = false;
-  final _firstpassword = TextEditingController();
-  final _secondpassword = TextEditingController();
-  final _fullname = TextEditingController();
-  final _phonenum = TextEditingController();
-  final _email = TextEditingController();
+  final _emailController = TextEditingController();
+  final _firstPasswordController = TextEditingController();
+  final _secondPasswordController = TextEditingController();
+  final _fullNameController = TextEditingController();
+  final _phoneNumberController = TextEditingController();
   UserModel userModel = new UserModel();
+
   void updatePasswordType(bool passwordVisible) => setState(() {
     this.passwordVisible = passwordVisible;
   });
-    _changeName(){
-      if(_firstpassword == _secondpassword){
-        print('da');
-      }
-      else(print('net')); 
-    }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +40,7 @@ class RegistrationWindowState extends State<Registration> {
                   Text('Full name', style: small_grey()),
                   Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                   TextField(
-                    controller: _fullname,
+                    controller: _fullNameController,
                     decoration:field_decoration('Ivan Ivanov'))
                 ],
               ),
@@ -55,7 +51,7 @@ class RegistrationWindowState extends State<Registration> {
                   Text('Phone number', style: small_grey()),
                   Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                   TextField(
-                    controller: _phonenum,
+                    controller: _phoneNumberController,
                     decoration:field_decoration('+7(999)999-99-99'))
                 ],
               ),
@@ -66,7 +62,7 @@ class RegistrationWindowState extends State<Registration> {
                   Text('Email address', style: small_grey()),
                   Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                   TextField(
-                    controller: _email,
+                    controller: _emailController,
                     decoration:field_decoration('********@mail.com'))
                 ],
               ),
@@ -77,7 +73,7 @@ class RegistrationWindowState extends State<Registration> {
                   Text('Password', style: small_grey()),
                   Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                   TextField(
-                    controller: _firstpassword,
+                    controller: _firstPasswordController,
                     decoration:password_field_decoration('*******', passwordVisible, updatePasswordType),
                     obscureText: passwordVisible,
                   )
@@ -90,7 +86,7 @@ class RegistrationWindowState extends State<Registration> {
                   Text('Confirm password', style: small_grey()),
                   Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
                   TextField(
-                    controller: _secondpassword,
+                    controller: _secondPasswordController,
                     decoration:password_field_decoration('*******', passwordVisible, updatePasswordType),
                     obscureText: passwordVisible,
                   )
@@ -137,16 +133,22 @@ class RegistrationWindowState extends State<Registration> {
       )
     );
   }
-    Future<void> registration() async {
-    userModel.email = _email.text.toString();
-    userModel.password = _firstpassword.text.toString();
-    userModel.name = _fullname.text.toString();
-    userModel.phoneNumber = _phonenum.text.toString();
 
+  Future<void> registration() async {
+    if(_emailController.text.toString() == null || _fullNameController.text.toString() == null || _phoneNumberController.text.toString() == null ||
+       _firstPasswordController.text.toString() == null || _secondPasswordController.text.toString() == null ||
+       _firstPasswordController.text.toString() != _secondPasswordController.text.toString()){
+      return;
+    }
 
-    if (_email != null && _phonenum != null && _fullname != null  && _firstpassword != null &&  _secondpassword != null && _firstpassword.text == _secondpassword.text && await userModel.register() ) {
-          print('user added'); 
-        }
+    userModel.email = _emailController.text.toString();
+    userModel.password = _firstPasswordController.text.toString();
+    userModel.name = _fullNameController.text.toString();
+    userModel.phoneNumber = _phoneNumberController.text.toString();
+
+    if (await userModel.register()) {
+      print('user added');
+    }
     else {
       print('denie');
     }
