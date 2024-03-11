@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -48,8 +49,18 @@ class UserModel{
 
     return jsonResponse['success'];
   }
+  Future <bool> otpPassword() async{
+    verCode = pin1.toString() + pin2.toString() + pin3.toString() + pin4.toString() + pin5.toString() + pin6.toString();
+    final response = await Dio().get(
+      'http://83.147.245.57/user_check_verification_code?email=${this.email}&verificationCode=${this.verCode}'
+    );
+    final jsonResponse = response.data as Map<String, dynamic>;
+    return jsonResponse['success'];
+  }
 
   int? id;
+  String? verCode;
+  String? pin1,pin2,pin3,pin4,pin5,pin6;
   String? email;
   String? password;
   String? name;
