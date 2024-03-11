@@ -1,4 +1,5 @@
 import 'package:RediExpress/Models/UserModel.dart';
+import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/ThemesFolder/Style.dart';
@@ -10,6 +11,7 @@ class ForgotPassword extends StatefulWidget{
 
 class _ForgotPasswordState extends State<ForgotPassword> {
         UserModel userModel = new UserModel();
+         CurrentUserClass user = new CurrentUserClass();
         final _emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         return;
       }
         userModel.email = _emailController.text.toString();
-    if (await userModel.forgotPassword()) {
+    if (await userModel.forgotPassword()) { 
+      CurrentUserClass.userModel.email = _emailController.text.toString();
       Navigator.of(context).pushNamed('/OtpPassword');
     }
     else{

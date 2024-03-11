@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
 import 'package:dio/dio.dart';
 
 class UserModel{
+  CurrentUserClass user = new CurrentUserClass();
   Future<bool> checkIfExists() async{
     final response = await Dio().get(
       'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
@@ -50,6 +52,7 @@ class UserModel{
     return jsonResponse['success'];
   }
   Future <bool> otpPassword() async{
+    email = CurrentUserClass.userModel.email;
     verCode = pin1.toString() + pin2.toString() + pin3.toString() + pin4.toString() + pin5.toString() + pin6.toString();
     final response = await Dio().get(
       'http://83.147.245.57/user_check_verification_code?email=${this.email}&verificationCode=${this.verCode}'

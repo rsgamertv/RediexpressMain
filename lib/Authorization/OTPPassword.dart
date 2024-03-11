@@ -1,4 +1,5 @@
 import 'package:RediExpress/Models/UserModel.dart';
+import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
 import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/material.dart';
@@ -174,7 +175,7 @@ class _OTPPasswordState extends State<OTPPassword> {
             ]),)
               ),
               Expanded(child: Container(),flex: 4,),
-              
+
               Expanded(flex: 10, child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -199,7 +200,7 @@ class _OTPPasswordState extends State<OTPPassword> {
        userModel.pin5 = _pin5.text;
        userModel.pin6 = _pin6.text;
         if(await userModel.otpPassword()){
-          print('Сработало');
+          Navigator.of(context).pushNamed('/NewPasswordSet');
         }
         else(print('плохо'));
     }
