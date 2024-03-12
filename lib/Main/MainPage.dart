@@ -34,6 +34,7 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
               label: 'Home',
               icon: Icon(Icons.home),
+              
           ),
           BottomNavigationBarItem(
             label: 'Wallet',
