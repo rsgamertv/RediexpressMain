@@ -1,3 +1,6 @@
+import 'package:RediExpress/Main/CurrentMainPage.dart';
+import 'package:RediExpress/Main/MainPage.dart';
+import 'package:RediExpress/Packages/PackageInfo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +24,9 @@ class _AllPackagesState extends State<AllPackages> {
             alignment: Alignment.bottomRight,
             padding: EdgeInsets.all(20),
             child: TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  CurrentMainPage.mainPage.changeView(PackageInfo());
+                },
                 child: Icon(Icons.add),
                 style: TextButton.styleFrom(
                   shape: CircleBorder(),

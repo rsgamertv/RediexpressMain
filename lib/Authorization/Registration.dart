@@ -102,7 +102,7 @@ class RegistrationWindowState extends State<Registration> {
                 children: [
                   Checkbox(value: isChecked, onChanged: (newBool){setState(() {
                     isChecked = newBool;
-                  });}, activeColor: Colors.blueAccent,),
+                  });}, activeColor: Theme.of(context).primaryColor,),
                   Text('By ticking this box, you agree to our ', style: small_grey()),
                   Text('Terms ', style: small_orange()),
                 ],
@@ -150,7 +150,7 @@ class RegistrationWindowState extends State<Registration> {
       Navigator.of(context).pushNamed('/Authorization');
     }
     else {
-      print('denie');
+      print('Denied');
     }
   }
 }

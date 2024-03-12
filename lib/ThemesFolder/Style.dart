@@ -16,6 +16,7 @@ BoxDecoration decoration(){
     borderRadius: BorderRadius.circular(5),
   );
 }
+
 InputDecoration field_decoration(String hint){
   return InputDecoration(
     border: OutlineInputBorder(
@@ -27,6 +28,13 @@ InputDecoration field_decoration(String hint){
         ),
       borderRadius: BorderRadius.circular(10)
     )
+  );
+}
+
+InputDecoration field_outlined_decoration(String hint){
+  return InputDecoration(
+      border: UnderlineInputBorder(),
+      hintText: hint,
   );
 }
 

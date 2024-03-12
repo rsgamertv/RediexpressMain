@@ -1,5 +1,6 @@
 import 'package:RediExpress/Authorization/Authorization.dart';
 import 'package:RediExpress/Authorization/Registration.dart';
+import 'package:RediExpress/Main/CurrentMainPage.dart';
 import 'package:RediExpress/Packages/AllPackages.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,24 +8,21 @@ import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget{
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<MainPage> createState() => MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class MainPageState extends State<MainPage> {
   int _currentIndex = 0;
-  final _pagecontroller = PageController();
+  dynamic _currentView = AllPackages();
+
+  MainPageState(){
+    CurrentMainPage.mainPage = this;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pagecontroller,
-        children: [
-          Scaffold(),
-          Scaffold(),
-          Scaffold(),
-          Scaffold()
-        ],
-      ),
+      body: _currentView,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         selectedItemColor: Theme.of(context).primaryColor,
@@ -32,12 +30,15 @@ class _MainPageState extends State<MainPage> {
         unselectedItemColor: Colors.grey,
         unselectedLabelStyle: small_grey(),
         showUnselectedLabels: true,
-        onTap: _openPage,
+        onTap: (int newIndex){
+          setState(() {
+            this._currentIndex = newIndex;
+          });
+        },
         items: const [
           BottomNavigationBarItem(
               label: 'Home',
               icon: Icon(Icons.home),
-              
           ),
           BottomNavigationBarItem(
             label: 'Wallet',
@@ -55,8 +56,10 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
-  void _openPage(int index){
-    setState(() => _currentIndex = index);
-    _pagecontroller.animateToPage(index, duration: Duration(milliseconds: 200), curve: Curves.linear);
+
+  void changeView(dynamic view){
+    setState(() {
+      this._currentView = view;
+    });
   }
 }

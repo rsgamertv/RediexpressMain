@@ -80,7 +80,7 @@ class _AuthorizationState extends State<Authorization> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                            Text('Already have an account?' , style: small_grey(),),
+                            Text('Don\'t have an account?' , style: small_grey(),),
                             TextButton(onPressed: (){
                               Navigator.of(context).pushNamed('/Registration');
                             }, child: Text('Sign Up', style: button_blue(),))
