@@ -3,6 +3,7 @@ import 'package:RediExpress/Authorization/ForgotPassword.dart';
 import 'package:RediExpress/Authorization/NewPasswordSet.dart';
 import 'package:RediExpress/Authorization/OTPPassword.dart';
 import 'package:RediExpress/Main/MainPage.dart';
+import 'package:RediExpress/Main/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/Boards/OnBoard1.dart';
 import 'package:RediExpress/Boards/OnBoard2.dart';
@@ -33,9 +34,10 @@ class MyApp extends StatelessWidget {
           '/ForgotPassword':(context) => ForgotPassword(),
           '/MainPage': (context) => MainPage(),
           '/OtpPassword':(context) => OTPPassword(),
-          '/NewPasswordSet':(context) => NewPasswordSet()
+          '/NewPasswordSet':(context) => NewPasswordSet(),
+          '/ProfileScreen':(context) => ProfileScreen()
       },
-      initialRoute: '/ForgotPassword',
+      initialRoute: '/MainPage',
     );
   }
 }

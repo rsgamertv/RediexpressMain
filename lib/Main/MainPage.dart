@@ -12,11 +12,18 @@ class MainPage extends StatefulWidget{
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
+  final _pagecontroller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MaterialApp(
-        home: AllPackages(),
+      body: PageView(
+        controller: _pagecontroller,
+        children: [
+          Scaffold(),
+          Scaffold(),
+          Scaffold(),
+          Scaffold()
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
@@ -25,11 +32,7 @@ class _MainPageState extends State<MainPage> {
         unselectedItemColor: Colors.grey,
         unselectedLabelStyle: small_grey(),
         showUnselectedLabels: true,
-        onTap: (int newIndex){
-          setState(() {
-            _currentIndex = newIndex;
-          });
-        },
+        onTap: _openPage,
         items: const [
           BottomNavigationBarItem(
               label: 'Home',
@@ -51,5 +54,9 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
     );
+  }
+  void _openPage(int index){
+    setState(() => _currentIndex = index);
+    _pagecontroller.animateToPage(index, duration: Duration(milliseconds: 200), curve: Curves.linear);
   }
 }
