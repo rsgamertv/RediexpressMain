@@ -46,16 +46,24 @@ class UserModel{
     final response = await Dio().get(
         'http://83.147.245.57/user_ask_reset_password?email=${this.email}'
      );
-
     final jsonResponse = response.data as Map<String, dynamic>;
-
     return jsonResponse['success'];
   }
   Future <bool> otpPassword() async{
     email = CurrentUserClass.userModel.email;
     verCode = pin1.toString() + pin2.toString() + pin3.toString() + pin4.toString() + pin5.toString() + pin6.toString();
+    CurrentUserClass.userModel.verCode = verCode;
     final response = await Dio().get(
       'http://83.147.245.57/user_check_verification_code?email=${this.email}&verificationCode=${this.verCode}'
+    );
+    final jsonResponse = response.data as Map<String, dynamic>;
+    return jsonResponse['success'];
+  }
+  Future <bool> NewPasswordSet() async{
+    email = CurrentUserClass.userModel.email;
+    verCode = CurrentUserClass.userModel.verCode;
+    final response = await Dio().get(
+      'http://83.147.245.57/user_reset_password?email=${this.email}&verificationCode=${this.verCode}&newPassword=${this.password}'
     );
     final jsonResponse = response.data as Map<String, dynamic>;
     return jsonResponse['success'];
