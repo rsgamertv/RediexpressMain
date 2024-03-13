@@ -28,7 +28,7 @@ class _OTPPasswordState extends State<OTPPassword> {
             children: [
               Expanded(flex: 30, child: Container()),
               Expanded(flex: 4,child: Text('OTP Verification', style: large_black(),)),
-              Expanded(flex: 4,child: Text('OTP VerificationEnter the 6 digit numbers sent to your email', style: small_grey(),)),
+              Expanded(flex: 5,child: Text('OTP VerificationEnter the 6 digit numbers sent to your email', style: small_grey(),)),
               Expanded( flex: 4,child: Container()),
               Expanded(flex: 10,child: 
                 Form(child:     Row(

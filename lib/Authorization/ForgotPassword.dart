@@ -64,7 +64,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       }
         userModel.email = _emailController.text.toString();
     if (await userModel.forgotPassword() == true) { 
-      CurrentUserClass.userModel.email = _emailController.text.toString();
       Navigator.of(context).pushNamed('/OtpPassword');
     }
     else{
