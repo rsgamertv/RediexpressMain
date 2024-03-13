@@ -65,3 +65,9 @@ TextStyle small_orange(){
     fontSize: 13,
   );
 }
+TextStyle title_grey(){
+  return TextStyle(
+    color: Colors.grey,
+    fontSize: 24
+  );
+}
