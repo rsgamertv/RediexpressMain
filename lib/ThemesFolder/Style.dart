@@ -7,11 +7,22 @@ return BoxDecoration(
 );
 
 }
+
 BoxDecoration decoration(){
   return BoxDecoration(
     border: Border.all(
       width: 3,
       color: Colors.blueAccent
+    ),
+    borderRadius: BorderRadius.circular(5),
+  );
+}
+
+BoxDecoration white_decoration(){
+  return BoxDecoration(
+    border: Border.all(
+        width: 3,
+        color: Colors.white
     ),
     borderRadius: BorderRadius.circular(5),
   );

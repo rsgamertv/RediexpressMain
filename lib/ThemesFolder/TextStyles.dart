@@ -16,6 +16,14 @@ TextStyle button_white(){
   );
 }
 
+TextStyle button_grey(){
+  return TextStyle(
+    color: Colors.grey,
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+  );
+}
+
 TextStyle large_blue(){
   return TextStyle(
       color: Colors.blueAccent,
@@ -65,9 +73,24 @@ TextStyle small_orange(){
     fontSize: 13,
   );
 }
+
+TextStyle medium_orange(){
+  return TextStyle(
+    color: Colors.orange,
+    fontSize: 20,
+  );
+}
+
 TextStyle title_grey(){
   return TextStyle(
     color: Colors.grey,
     fontSize: 24
+  );
+}
+
+TextStyle medium_grey(){
+  return TextStyle(
+    color: Colors.grey,
+    fontSize: 20,
   );
 }

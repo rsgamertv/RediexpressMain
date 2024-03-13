@@ -5,7 +5,14 @@ import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
 import 'package:dio/dio.dart';
 
 class UserModel{
-  CurrentUserClass user = new CurrentUserClass();
+  int? id;
+  String? verCode;
+  String? pin1,pin2,pin3,pin4,pin5,pin6;
+  String? email;
+  String? password;
+  String? name;
+  String? phoneNumber;
+
   Future<bool> checkIfExists() async{
     final response = await Dio().get(
       'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
@@ -28,6 +35,7 @@ class UserModel{
 
   Future<bool> register() async{
     final json = new Map<String,String>();
+
     json['Email'] = this.email!;
     json['Password'] = this.password!;
     json['Name'] = this.name!;
@@ -50,9 +58,7 @@ class UserModel{
     return jsonResponse['success'];
   }
   Future <bool> otpPassword() async{
-    email = CurrentUserClass.userModel.email;
     verCode = pin1.toString() + pin2.toString() + pin3.toString() + pin4.toString() + pin5.toString() + pin6.toString();
-    CurrentUserClass.userModel.verCode = verCode;
     final response = await Dio().get(
       'http://83.147.245.57/user_check_verification_code?email=${this.email}&verificationCode=${this.verCode}'
     );
@@ -60,20 +66,10 @@ class UserModel{
     return jsonResponse['success'];
   }
   Future <bool> NewPasswordSet() async{
-    email = CurrentUserClass.userModel.email;
-    verCode = CurrentUserClass.userModel.verCode;
     final response = await Dio().get(
       'http://83.147.245.57/user_reset_password?email=${this.email}&verificationCode=${this.verCode}&newPassword=${this.password}'
     );
     final jsonResponse = response.data as Map<String, dynamic>;
     return jsonResponse['success'];
   }
-
-  int? id;
-  String? verCode;
-  String? pin1,pin2,pin3,pin4,pin5,pin6;
-  String? email;
-  String? password;
-  String? name;
-  String? phoneNumber;
 }

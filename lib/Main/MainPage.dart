@@ -14,13 +14,14 @@ class MainPage extends StatefulWidget{
 class MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final _pagecontroller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
         controller: _pagecontroller,
         children: [
-          Scaffold(),
+          AllPackages(),
           Scaffold(),
           Scaffold(),
           ProfileScreen(),
@@ -36,9 +37,8 @@ class MainPageState extends State<MainPage> {
         onTap: _openPage,
         items: const [
           BottomNavigationBarItem(
-              label: 'Home',
-              icon: Icon(Icons.home),
-              
+            label: 'Home',
+            icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
             label: 'Wallet',
