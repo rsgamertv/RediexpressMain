@@ -1,6 +1,11 @@
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 class ProfileScreen extends StatefulWidget{
+  const ProfileScreen({super.key});
+
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
@@ -12,85 +17,278 @@ class _ProfileScreenState extends State<ProfileScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Profile',style: title_grey(),),
+        surfaceTintColor: Colors.white,
         automaticallyImplyLeading: false,
         elevation: 2,
         backgroundColor: Colors.white,
         shadowColor: Colors.grey,
       ),
       body: Container(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: Column(
           children: [
-<<<<<<< HEAD
-            Expanded(child: Container(),flex: 4,),
-            Expanded(
-              child: Container(
-=======
-            Expanded(flex: 20,child: Container(
->>>>>>> 6a9e43d (fixed all items)
-                child: Row(
+            Expanded(flex: 2,child: Container(),),
+            Expanded(flex: 15,child: Row(
+                children: [
+                  const Expanded(flex: 18,child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/manimage.png'), 
+                    radius: 100,
+                  ),),
+                  Expanded(child: Container(),flex: 5,),
+                  Expanded(flex: 70,child: Column(
+                    children: [
+                      Expanded(flex: 25,child: Container(),),
+                      Expanded(flex: 25,child:Row(
+                        children: [
+                          Expanded(flex: 15,child: Text('Hello', style: medium_black(),),),
+                          Expanded(flex: 55,child: Text('Ken', style: medium_black(),),)
+                        ],
+                      ),),
+                      Expanded(flex: 5,child: Container(),),
+                      Expanded(flex: 20,child: Row(
+                        children: [
+                          Expanded(flex: 40,child: Text('Current balance: ', style: small_black(),),),
+                          Expanded(flex: 38,child: Text('N10,712:00',style: small_blue(),),)
+                        ],
+                      ),),          
+                      Expanded(flex: 35,child: Container(),)
+                    ],
+                  ),),
+                  Expanded(flex: 10, child: IconButton(onPressed: (){}, icon: const Icon(Icons.visibility_off_outlined), padding: const EdgeInsets.fromLTRB(0, 0, 8, 8),iconSize: 25,color: Colors.black,))
+
+                ],
+            ),),
+            Expanded(flex: 1,child: Container(),),
+            Expanded(flex: 4,child: Row(
+              children: [
+                Expanded(flex: 54,child: Text('Enabled dark Mode', style: title_black(),),),
+                Expanded(flex: 10, child: CupertinoSwitch(value: false, onChanged: (v) {}) ),
+              ],
+            ),),
+            Expanded(flex: 5,child: Container(),),
+            Expanded(flex: 10,child:  Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,1),
+                      blurRadius: 4,
+                      color: Colors.grey
+                    )
+                  ]
+                ),
+                child:
+                  GestureDetector(
+                    onTap: (){},
+                    child: 
+                Row(
                   children: [
-                    Expanded(child: Container(),flex: 5,),
-                    Expanded(flex: 20,child:      CircleAvatar(
-                      radius: 100,
-                      backgroundImage: AssetImage('assets/manimage.png'),
-                    ),),
-<<<<<<< HEAD
-                    Expanded(child: Container(),flex: 5,),
-                    Expanded(
-                      child: Container(
-                        child: Column(
-                           children: [
-                            Expanded(child: Container(),flex: 20,),
-                            Expanded(child: Row(
-                              children: [
-                                Text('Hello', style: medium_black(),),
-                                Text('Alex', style: medium_black(),)
-                              ],
-                            ),flex: 30,
-                            ),
-                            Expanded(child: Container(),flex: 5,),
-                            Expanded(child: Row(),flex: 30,)
-                           ],
-                        ),
-                    ),flex: 60,)
-=======
-                    Expanded(child: Container(),flex: 3,),
-                    Expanded(child: Container(
-                      child: Column(
-                         children: [
-                          Expanded(child: Container(),flex: 30,),
-                          Expanded(child: Row(
-                            children: [
-                              Text('Hello ', style: medium_black(),),
-                              Text('Alex', style: medium_black(),)
-                            ],
-                          ),flex: 20,
-                          ),
-                          Expanded(child: Row(
-                                children: [
-                                  Text('Current balance: ',style: small_black(), ),
-                                  Text('N10,712:00',style: small_blue(),)
-                                ],
-                          ),flex: 30,),
-                          Expanded(child: Container(),flex: 25),
-                         ],
-                      ),
-                    ),flex: 60,),
-                    Expanded(child: FloatingActionButton(onPressed: (){}, child: Icon(Icons.remove_red_eye),backgroundColor: Colors.white,elevation: 0,foregroundColor: Colors.black,),flex: 10,),
-                    Expanded(child: Container(),flex: 2,)            
->>>>>>> 6a9e43d (fixed all items)
+                    Expanded(child: SvgPicture.asset('assets/profileicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(child: Container(),flex: 2,),
+                            Expanded(child: Text('Edit Profile' , style: medium_black(),), flex: 8,),
+                            Expanded(child: Text('Name, phone no, address, email ...', style: small_grey(),),flex: 10,)
+                          ],
+                    ),flex: 73,),
+                    Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
                   ],
                 ),
-
+                  )
             ),),
-            Expanded(child:Container(),flex: 3,),
-            Expanded(child: Row(
-              children: [
-
-              ],
-            ),flex: 5,),
-            Expanded(child: Container(),flex: 3,),
-            Expanded(child: Container(),flex: 60,)
+            Expanded(child: Container(),flex: 1,),
+                     Expanded(flex: 10,child:  Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,1),
+                      blurRadius: 4,
+                      color: Colors.grey
+                    )
+                  ]
+                ),
+                child:
+                  GestureDetector(
+                    onTap: (){},
+                    child: 
+                Row(
+                  children: [
+                    Expanded(child: SvgPicture.asset('assets/statementsicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(child: Container(),flex: 2,),
+                            Expanded(child: Text('Statements & Reports' , style: medium_black(),), flex: 8,),
+                            Expanded(child: Text('Download transaction details, orders', style: small_grey(),),flex: 10,)
+                          ],
+                    ),flex: 73,),
+                    Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
+                  ],
+                ),
+                  )
+            ),),
+            Expanded(child: Container(),flex: 1,),
+                     Expanded(flex: 10,child:  Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,1),
+                      blurRadius: 4,
+                      color: Colors.grey
+                    )
+                  ]
+                ),
+                child:
+                  GestureDetector(
+                    onTap: (){},
+                    child: 
+                Row(
+                  children: [
+                    Expanded(child: SvgPicture.asset('assets/notifyicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(child: Container(),flex: 2,),
+                            Expanded(child: Text('Notification Settings' , style: medium_black(),), flex: 8,),
+                            Expanded(child: Text('mute, unmute, set location & tracking', style: small_grey(),),flex: 10,)
+                          ],
+                    ),flex: 73,),
+                    Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
+                  ],
+                ),
+                  )
+            ),),
+            Expanded(child: Container(),flex: 1,),
+                     Expanded(flex: 10,child:  Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,1),
+                      blurRadius: 4,
+                      color: Colors.grey
+                    )
+                  ]
+                ),
+                child:
+                  GestureDetector(
+                    onTap: (){},
+                    child: 
+                Row(
+                  children: [
+                    Expanded(child: SvgPicture.asset('assets/walleticon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(child: Container(),flex: 2,),
+                            Expanded(child: Text('Card & Bank account settings' , style: medium_black(),), flex: 8,),
+                            Expanded(child: Text('change cards, delete card details', style: small_grey(),),flex: 10,)
+                          ],
+                    ),flex: 73,),
+                    Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
+                  ],
+                ),
+                  )
+            ),),
+            Expanded(child: Container(),flex: 1,),
+                     Expanded(flex: 10,child:  Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,1),
+                      blurRadius: 4,
+                      color: Colors.grey
+                    )
+                  ]
+                ),
+                child:
+                  GestureDetector(
+                    onTap: (){},
+                    child: 
+                Row(
+                  children: [
+                    Expanded(child: SvgPicture.asset('assets/referalsicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(child: Container(),flex: 2,),
+                            Expanded(child: Text('Referrals' , style: medium_black(),), flex: 8,),
+                            Expanded(child: Text('check no of friends and earn', style: small_grey(),),flex: 10,)
+                          ],
+                    ),flex: 73,),
+                    Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
+                  ],
+                ),
+                  )
+            ),),
+            Expanded(child: Container(),flex: 1,),
+                     Expanded(flex: 10,child:  Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,1),
+                      blurRadius: 4,
+                      color: Colors.grey
+                    )
+                  ]
+                ),
+                child:
+                  GestureDetector(
+                    onTap: (){},
+                    child: 
+                Row(
+                  children: [
+                    Expanded(child: SvgPicture.asset('assets/imageicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(child: Container(),flex: 2,),
+                            Expanded(child: Text('About Us' , style: medium_black(),), flex: 8,),
+                            Expanded(child: Text('know more about us, terms, conditions', style: small_grey(),),flex: 10,)
+                          ],
+                    ),flex: 73,),
+                    Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
+                  ],
+                ),
+                  )
+            ),),
+            Expanded(child: Container(),flex: 1,),
+                     Expanded(flex: 10,child:  Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,1),
+                      blurRadius: 4,
+                      color: Colors.grey
+                    )
+                  ]
+                ),
+                child:
+                  GestureDetector(
+                    onTap: (){},
+                    child: 
+                Row(
+                  children: [
+                    Expanded(child: SvgPicture.asset('assets/logouticon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(child: Text('Log Out' , style: medium_black(),)),
+                          ],
+                    ),flex: 73,),
+                    Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
+                  ],
+                ),
+                  )
+            ),),
+            Expanded(child: Container(),flex: 1,),
           ],
         ),
       ),

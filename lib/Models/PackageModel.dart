@@ -1,5 +1,3 @@
-import 'dart:js_interop_unsafe';
-
 import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
 import 'package:dio/dio.dart';
 

@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           '/PackageInfo':(context) => PackageInfo(),
           '/ReadyPackageInfo':(context) => ReadyPackageInfo(null),
       },
-      initialRoute: '/ForgotPassword',
+      initialRoute: '/MainPage',
     );
   }
 }

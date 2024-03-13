@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 TextStyle button_blue(){
   return TextStyle(
@@ -43,6 +44,7 @@ TextStyle medium_black(){
   return TextStyle(
     color: Colors.black,
     fontSize: 20,
+    fontWeight: FontWeight.w500
   );
 }
 
@@ -92,5 +94,12 @@ TextStyle medium_grey(){
   return TextStyle(
     color: Colors.grey,
     fontSize: 20,
+  );
+}
+TextStyle title_black(){
+  return TextStyle(
+      color: Colors.black,
+      fontSize: 22,
+      fontWeight: FontWeight.w500
   );
 }
