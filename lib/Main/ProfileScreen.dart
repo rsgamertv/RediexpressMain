@@ -39,6 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Expanded(child: Row(
                             children: [
                               Text('Hello', style: medium_black(),),
+                              
                               Text('Alex', style: medium_black(),)
                             ],
                           ),flex: 30,

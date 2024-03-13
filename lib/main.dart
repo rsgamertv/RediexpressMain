@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           '/MainPage': (context) => MainPage(),
           '/OtpPassword':(context) => OTPPassword(),
       },
-      initialRoute: '/ForgotPassword',
+      initialRoute: '/MainPage',
     );
   }
 }
