@@ -25,7 +25,6 @@ class _AllPackagesState extends State<AllPackages> {
             padding: EdgeInsets.all(20),
             child: TextButton(
                 onPressed: (){
-                  CurrentMainPage.mainPage.changeView(PackageInfo());
                 },
                 child: Icon(Icons.add),
                 style: TextButton.styleFrom(

@@ -19,7 +19,6 @@ class _PackageInfoState extends State<PackageInfo> {
         centerTitle: true,
         leading: BackButton(
           onPressed: (){
-            CurrentMainPage.mainPage.changeView(AllPackages());
           },
         ),
       ),

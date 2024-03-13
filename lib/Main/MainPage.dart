@@ -8,10 +8,10 @@ import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget{
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<MainPage> createState() => MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final _pagecontroller = PageController();
   @override
