@@ -1,6 +1,6 @@
 import 'package:RediExpress/Authorization/Authorization.dart';
 import 'package:RediExpress/Authorization/Registration.dart';
-import 'package:RediExpress/Main/CurrentMainPage.dart';
+import 'package:RediExpress/Main/ProfileScreen.dart';
 import 'package:RediExpress/Packages/AllPackages.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,21 +8,24 @@ import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget{
   @override
-  State<MainPage> createState() => MainPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class MainPageState extends State<MainPage> {
+class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
-  dynamic _currentView = AllPackages();
-
-  MainPageState(){
-    CurrentMainPage.mainPage = this;
-  }
-
+  final _pagecontroller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _currentView,
+      body: PageView(
+        controller: _pagecontroller,
+        children: [
+          Scaffold(),
+          Scaffold(),
+          Scaffold(),
+          ProfileScreen(),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         selectedItemColor: Theme.of(context).primaryColor,
@@ -30,15 +33,12 @@ class MainPageState extends State<MainPage> {
         unselectedItemColor: Colors.grey,
         unselectedLabelStyle: small_grey(),
         showUnselectedLabels: true,
-        onTap: (int newIndex){
-          setState(() {
-            this._currentIndex = newIndex;
-          });
-        },
+        onTap: _openPage,
         items: const [
           BottomNavigationBarItem(
               label: 'Home',
               icon: Icon(Icons.home),
+              
           ),
           BottomNavigationBarItem(
             label: 'Wallet',
@@ -56,10 +56,8 @@ class MainPageState extends State<MainPage> {
       ),
     );
   }
-
-  void changeView(dynamic view){
-    setState(() {
-      this._currentView = view;
-    });
+  void _openPage(int index){
+    setState(() => _currentIndex = index);
+    _pagecontroller.animateToPage(index, duration: Duration(milliseconds: 200), curve: Curves.linear);
   }
 }
