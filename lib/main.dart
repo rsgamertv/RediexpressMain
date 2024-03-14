@@ -27,6 +27,53 @@ class MyApp extends StatelessWidget {
       theme:  ThemeData(
         primaryColor: Colors.blueAccent,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+        textTheme: TextTheme(
+          displaySmall: TextStyle(
+            fontSize: 14,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ),
+          displayMedium: TextStyle(
+            fontSize: 20,
+            color: Colors.black,
+            fontWeight: FontWeight.w500
+          ),
+          displayLarge: TextStyle(
+            fontSize: 24,
+            color: Colors.black,
+            fontWeight: FontWeight.w500
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 14,
+            color: Colors.blueAccent,
+            fontWeight: FontWeight.w500
+          ),
+          headlineMedium: TextStyle(
+            fontSize: 18,
+            color: Colors.blueAccent,
+            fontWeight: FontWeight.w500
+          ),
+          headlineLarge: TextStyle(
+            fontSize: 24,
+            color: Colors.blueAccent,
+            fontWeight: FontWeight.w500
+          ),
+          titleSmall: TextStyle(
+            fontSize: 14,
+            color: Colors.grey,
+            fontWeight: FontWeight.w500
+          ),
+          titleMedium: TextStyle(
+            fontSize: 18,
+            color: Colors.grey,
+            fontWeight: FontWeight.w500
+          ),
+          titleLarge: TextStyle(
+            fontSize: 24,
+            color: Colors.grey,
+            fontWeight: FontWeight.w500
+          )
+        )
       ),
       debugShowCheckedModeBanner: false,
       routes: {
