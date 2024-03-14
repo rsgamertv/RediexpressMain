@@ -11,13 +11,13 @@ class OTPPassword extends StatefulWidget{
 }
 
 class _OTPPasswordState extends State<OTPPassword> {
-  UserModel userModel = new UserModel();
   final _pin1 = TextEditingController();
-    final _pin2 = TextEditingController();
-      final _pin3 = TextEditingController();
-        final _pin4 = TextEditingController();
-          final _pin5 = TextEditingController();
-            final _pin6 = TextEditingController();
+  final _pin2 = TextEditingController();
+  final _pin3 = TextEditingController();
+  final _pin4 = TextEditingController();
+  final _pin5 = TextEditingController();
+  final _pin6 = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -193,16 +193,19 @@ class _OTPPasswordState extends State<OTPPassword> {
     );
   }
       Future<void> forgotPassword() async {
-       userModel.pin1 = _pin1.text;
-       userModel.pin2 = _pin2.text;
-       userModel.pin3 = _pin3.text;
-       userModel.pin4 = _pin4.text;
-       userModel.pin5 = _pin5.text;
-       userModel.pin6 = _pin6.text;
-        if(await userModel.otpPassword()){
+       CurrentUserClass.user.pin1 = _pin1.text;
+       CurrentUserClass.user.pin2 = _pin2.text;
+       CurrentUserClass.user.pin3 = _pin3.text;
+       CurrentUserClass.user.pin4 = _pin4.text;
+       CurrentUserClass.user.pin5 = _pin5.text;
+       CurrentUserClass.user.pin6 = _pin6.text;
+
+        if(await CurrentUserClass.user.otpPassword()){
           Navigator.of(context).pushNamed('/NewPasswordSet');
         }
-        else(print('плохо'));
+        else(
+            print('плохо')
+        );
     }
   }
 

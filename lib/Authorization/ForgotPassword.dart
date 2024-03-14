@@ -10,9 +10,8 @@ class ForgotPassword extends StatefulWidget{
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-        UserModel userModel = new UserModel();
-         CurrentUserClass user = new CurrentUserClass();
-        final _emailController = TextEditingController();
+  final _emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,8 +58,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     );
   }
     Future<void> forgotPassword() async {
-      userModel.email = _emailController.text.toString();
-    if (await userModel.forgotPassword() == true) { 
+    CurrentUserClass.user.email = _emailController.text.toString();
+
+    if (await CurrentUserClass.user.forgotPassword() == true) {
       Navigator.of(context).pushNamed('/OtpPassword');
     }
     else{

@@ -1,4 +1,5 @@
 import 'package:RediExpress/Models/UserModel.dart';
+import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
 import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/material.dart';
@@ -9,11 +10,12 @@ class NewPasswordSet extends StatefulWidget{
 }
 
 class _NewPasswordSetState extends State<NewPasswordSet> {
-   bool passwordVisible = false;
+  bool passwordVisible = false;
   bool? isChecked = false;
+
   final _firstPasswordController = TextEditingController();
   final _secondPasswordController = TextEditingController();
-  UserModel userModel = new UserModel();
+
   void updatePasswordType(bool passwordVisible) => setState(() {
   this.passwordVisible = passwordVisible;
   });
@@ -56,8 +58,10 @@ class _NewPasswordSetState extends State<NewPasswordSet> {
     if(_secondPasswordController != _firstPasswordController){
       showAboutDialog(context: context, applicationLegalese: 'Введите одинаковые пароли');
     }
-    userModel.password = _firstPasswordController.text.toString();
-    if(await userModel.NewPasswordSet()){
+
+    CurrentUserClass.user.password = _firstPasswordController.text.toString();
+
+    if(await CurrentUserClass.user.NewPasswordSet()){
       Navigator.of(context).pushNamed('/Authorization');
     }
     else{
