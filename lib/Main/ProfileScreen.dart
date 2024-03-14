@@ -1,5 +1,6 @@
 import 'package:RediExpress/Models/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/ThemesFolder/Theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,14 +17,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        title: Text('Profile',style: title_grey(),),
-        surfaceTintColor: Colors.white,
+        title: Text('Profile',style: Theme.of(context).textTheme.titleLarge,),
         automaticallyImplyLeading: false,
-        elevation: 2,
-        backgroundColor: Colors.white,
-        shadowColor: Colors.grey,
+        elevation: darkTheme.appBarTheme.elevation,
+        surfaceTintColor: Theme.of(context).cardColor,
       ),
       body: Container(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
@@ -56,26 +55,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Expanded(flex: 35,child: Container(),)
                     ],
                   ),),
-                  Expanded(flex: 10, child: IconButton(onPressed: (){}, icon: const Icon(Icons.visibility_off_outlined), padding: const EdgeInsets.fromLTRB(0, 0, 8, 8),iconSize: 25,color: Colors.black,))
+                  Expanded(flex: 10, child: IconButton(onPressed: (){}, icon: const Icon(Icons.visibility_off_outlined), padding: const EdgeInsets.fromLTRB(0, 0, 8, 8),iconSize: 25,color: Theme.of(context).iconTheme.color,))
 
                 ],
             ),),
             Expanded(flex: 1,child: Container(),),
             Expanded(flex: 4,child: Row(
               children: [
-                Expanded(flex: 54,child: Text('Enabled dark Mode', style: title_black(),),),
+                Expanded(flex: 54,child: Text('Enabled dark Mode', style: Theme.of(context).textTheme.displayLarge,),),
                 Expanded(flex: 10, child: CupertinoSwitch(value: false, onChanged: (v) {}) ),
               ],
             ),),
-            Expanded(flex: 5,child: Container(),),
+            Expanded(flex: 3,child: Container(),),
             Expanded(flex: 10,child:  Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).cardColor,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,1),
-                      blurRadius: 4,
-                      color: Colors.grey
+                      offset: Offset(0,2),
+                      blurRadius: 5,
+                      color: Color.fromRGBO(0, 0, 0, 0.15)
                     )
                   ]
                 ),
@@ -85,7 +84,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: 
                 Row(
                   children: [
-                    Expanded(child: SvgPicture.asset('assets/profileicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: SvgPicture.asset('assets/profileicon.svg',height: 30, width: 30, color: Theme.of(context).secondaryHeaderColor),flex: 15,),
                     Expanded(child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -101,13 +100,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),),
             Expanded(child: Container(),flex: 1,),
                      Expanded(flex: 10,child:  Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).cardColor,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,1),
-                      blurRadius: 4,
-                      color: Colors.grey
+                      offset: Offset(0,2),
+                      blurRadius: 5,
+                      color: Color.fromRGBO(0, 0, 0, 0.15)
                     )
                   ]
                 ),
@@ -117,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: 
                 Row(
                   children: [
-                    Expanded(child: SvgPicture.asset('assets/statementsicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: SvgPicture.asset('assets/statementsicon.svg',height: 30, width: 30,color: Theme.of(context).secondaryHeaderColor,),flex: 15,),
                     Expanded(child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -133,13 +132,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),),
             Expanded(child: Container(),flex: 1,),
                      Expanded(flex: 10,child:  Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).cardColor,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,1),
-                      blurRadius: 4,
-                      color: Colors.grey
+                      offset: Offset(0,2),
+                      blurRadius: 5,
+                      color: Color.fromRGBO(0, 0, 0, 0.15)
                     )
                   ]
                 ),
@@ -149,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: 
                 Row(
                   children: [
-                    Expanded(child: SvgPicture.asset('assets/notifyicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: SvgPicture.asset('assets/notifyicon.svg',height: 30, width: 30,color: Theme.of(context).secondaryHeaderColor,),flex: 15,),
                     Expanded(child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -165,13 +164,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),),
             Expanded(child: Container(),flex: 1,),
                      Expanded(flex: 10,child:  Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).cardColor,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,1),
-                      blurRadius: 4,
-                      color: Colors.grey
+                      offset: Offset(0,2),
+                      blurRadius: 5,
+                      color: Color.fromRGBO(0, 0, 0, 0.15)
                     )
                   ]
                 ),
@@ -181,7 +180,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: 
                 Row(
                   children: [
-                    Expanded(child: SvgPicture.asset('assets/walleticon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: SvgPicture.asset('assets/walleticon.svg',height: 30, width: 30,color: Theme.of(context).secondaryHeaderColor,),flex: 15,),
                     Expanded(child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -197,13 +196,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),),
             Expanded(child: Container(),flex: 1,),
                      Expanded(flex: 10,child:  Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).cardColor,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,1),
-                      blurRadius: 4,
-                      color: Colors.grey
+                      offset: Offset(0,2),
+                      blurRadius: 5,
+                      color: Color.fromRGBO(0, 0, 0, 0.15)
                     )
                   ]
                 ),
@@ -213,7 +212,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: 
                 Row(
                   children: [
-                    Expanded(child: SvgPicture.asset('assets/referalsicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: SvgPicture.asset('assets/referalsicon.svg',height: 30, width: 30,color: Theme.of(context).secondaryHeaderColor,),flex: 15,),
                     Expanded(child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -229,13 +228,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),),
             Expanded(child: Container(),flex: 1,),
                      Expanded(flex: 10,child:  Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).cardColor,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,1),
-                      blurRadius: 4,
-                      color: Colors.grey
+                      offset: Offset(0,2),
+                      blurRadius: 5,
+                      color: Color.fromRGBO(0, 0, 0, 0.15)
                     )
                   ]
                 ),
@@ -249,7 +248,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: 
                 Row(
                   children: [
-                    Expanded(child: SvgPicture.asset('assets/imageicon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: SvgPicture.asset('assets/imageicon.svg',height: 30, width: 30,color: Theme.of(context).secondaryHeaderColor,),flex: 15,),
                     Expanded(child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -265,13 +264,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),),
             Expanded(child: Container(),flex: 1,),
                      Expanded(flex: 10,child:  Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration:  BoxDecoration(
+                  color: Theme.of(context).cardColor,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,1),
-                      blurRadius: 4,
-                      color: Colors.grey
+                      offset: Offset(0,2),
+                      blurRadius: 5,
+                      color: Color.fromRGBO(0, 0, 0, 0.15)
                     )
                   ]
                 ),
@@ -281,20 +280,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: 
                 Row(
                   children: [
-                    Expanded(child: SvgPicture.asset('assets/logouticon.svg',height: 30, width: 30,),flex: 15,),
+                    Expanded(child: SvgPicture.asset('assets/logouticon.svg',height: 30, width: 30,),flex: 20),
                     Expanded(child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(child: Text('Log Out' , style: Theme.of(context).textTheme.displayMedium,)),
                           ],
-                    ),flex: 73,),
+                    ),flex:73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
                   ],
                 ),
                   )
             ),),
-            Expanded(child: Container(),flex: 1,),
+            Expanded(child: Container(),flex: 3,),
           ],
         ),
       ),

@@ -3,25 +3,25 @@ import 'package:RediExpress/Authorization/Registration.dart';
 import 'package:RediExpress/Main/ProfileScreen.dart';
 import 'package:RediExpress/Packages/AllPackages.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/ThemesFolder/Theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget{
   @override
-  State<MainPage> createState() => MainPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class MainPageState extends State<MainPage> {
+class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final _pagecontroller = PageController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
         controller: _pagecontroller,
         children: [
-          AllPackages(),
+          Scaffold(),
           Scaffold(),
           Scaffold(),
           ProfileScreen(),
@@ -29,16 +29,18 @@ class MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: Theme.of(context).primaryColor,
+        selectedItemColor: Colors.blueAccent,
         selectedLabelStyle: small_blue(),
-        unselectedItemColor: Colors.grey,
+        type: BottomNavigationBarType.shifting,
+        unselectedItemColor: Theme.of(context).iconTheme.color,
         unselectedLabelStyle: small_grey(),
         showUnselectedLabels: true,
+        fixedColor: Colors.black,
         onTap: _openPage,
-        items: const [
+        items:  [
           BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home),
+              label: 'Home',
+              icon: Icon(Icons.home,),        
           ),
           BottomNavigationBarItem(
             label: 'Wallet',
@@ -50,7 +52,8 @@ class MainPageState extends State<MainPage> {
           ),
           BottomNavigationBarItem(
             label: 'Profile',
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person,),
+            
           ),
         ],
       ),
