@@ -40,15 +40,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Expanded(flex: 25,child: Container(),),
                       Expanded(flex: 25,child:Row(
                         children: [
-                          Expanded(flex: 15,child: Text('Hello', style: medium_black(),),),
-                          Expanded(flex: 55,child: Text('Ken', style: medium_black(),),)
+                          Expanded(flex: 15,child: Text('Hello', style: Theme.of(context).textTheme.displayMedium,),),
+                          Expanded(flex: 55,child: Text('Ken', style: Theme.of(context).textTheme.displayMedium,),)
                         ],
                       ),),
                       Expanded(flex: 5,child: Container(),),
                       Expanded(flex: 20,child: Row(
                         children: [
-                          Expanded(flex: 40,child: Text('Current balance: ', style: small_black(),),),
-                          Expanded(flex: 38,child: Text('N10,712:00',style: small_blue(),),)
+                          Expanded(flex: 30,child: Text('Current balance: ', style: Theme.of(context).textTheme.displaySmall,),),
+                          Expanded(flex: 38,child: Text('N10,712:00',style: Theme.of(context).textTheme.headlineSmall,),)
                         ],
                       ),),          
                       Expanded(flex: 35,child: Container(),)
@@ -88,8 +88,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(child: Container(),flex: 2,),
-                            Expanded(child: Text('Edit Profile' , style: medium_black(),), flex: 8,),
-                            Expanded(child: Text('Name, phone no, address, email ...', style: small_grey(),),flex: 10,)
+                            Expanded(child: Text('Edit Profile' , style: Theme.of(context).textTheme.displayMedium,), flex: 8,),
+                            Expanded(child: Text('Name, phone no, address, email ...', style: Theme.of(context).textTheme.titleSmall,),flex: 10,)
                           ],
                     ),flex: 73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
@@ -120,8 +120,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(child: Container(),flex: 2,),
-                            Expanded(child: Text('Statements & Reports' , style: medium_black(),), flex: 8,),
-                            Expanded(child: Text('Download transaction details, orders', style: small_grey(),),flex: 10,)
+                            Expanded(child: Text('Statements & Reports' , style: Theme.of(context).textTheme.displayMedium,), flex: 8,),
+                            Expanded(child: Text('Download transaction details, orders', style: Theme.of(context).textTheme.titleSmall,),flex: 10,)
                           ],
                     ),flex: 73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
@@ -152,8 +152,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(child: Container(),flex: 2,),
-                            Expanded(child: Text('Notification Settings' , style: medium_black(),), flex: 8,),
-                            Expanded(child: Text('mute, unmute, set location & tracking', style: small_grey(),),flex: 10,)
+                            Expanded(child: Text('Notification Settings' , style: Theme.of(context).textTheme.displayMedium,), flex: 8,),
+                            Expanded(child: Text('mute, unmute, set location & tracking', style: Theme.of(context).textTheme.titleSmall,),flex: 10,)
                           ],
                     ),flex: 73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
@@ -184,8 +184,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(child: Container(),flex: 2,),
-                            Expanded(child: Text('Card & Bank account settings' , style: medium_black(),), flex: 8,),
-                            Expanded(child: Text('change cards, delete card details', style: small_grey(),),flex: 10,)
+                            Expanded(child: Text('Card & Bank account settings' , style: Theme.of(context).textTheme.displayMedium,), flex: 8,),
+                            Expanded(child: Text('change cards, delete card details', style: Theme.of(context).textTheme.titleSmall,),flex: 10,)
                           ],
                     ),flex: 73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
@@ -216,8 +216,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(child: Container(),flex: 2,),
-                            Expanded(child: Text('Referrals' , style: medium_black(),), flex: 8,),
-                            Expanded(child: Text('check no of friends and earn', style: small_grey(),),flex: 10,)
+                            Expanded(child: Text('Referrals' , style: Theme.of(context).textTheme.displayMedium,), flex: 8,),
+                            Expanded(child: Text('check no of friends and earn', style: Theme.of(context).textTheme.titleSmall,),flex: 10,)
                           ],
                     ),flex: 73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
@@ -239,7 +239,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 child:
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (
+
+                    ){
+                      
+                    },
                     child: 
                 Row(
                   children: [
@@ -248,8 +252,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(child: Container(),flex: 2,),
-                            Expanded(child: Text('About Us' , style: medium_black(),), flex: 8,),
-                            Expanded(child: Text('know more about us, terms, conditions', style: small_grey(),),flex: 10,)
+                            Expanded(child: Text('About Us' , style: Theme.of(context).textTheme.displayMedium,), flex: 8,),
+                            Expanded(child: Text('know more about us, terms, condition', style: Theme.of(context).textTheme.titleSmall,),flex: 10,)
                           ],
                     ),flex: 73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
@@ -280,7 +284,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(child: Text('Log Out' , style: medium_black(),)),
+                            Expanded(child: Text('Log Out' , style: Theme.of(context).textTheme.displayMedium,)),
                           ],
                     ),flex: 73,),
                     Expanded(child: Icon(Icons.keyboard_arrow_right),flex: 10,),
