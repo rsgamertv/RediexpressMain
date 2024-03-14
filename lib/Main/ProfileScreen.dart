@@ -1,3 +1,4 @@
+import 'package:RediExpress/Models/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class ProfileScreen extends StatefulWidget{
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  UserModel userModel = new UserModel();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Expanded(flex: 25,child:Row(
                         children: [
                           Expanded(flex: 15,child: Text('Hello', style: Theme.of(context).textTheme.displayMedium,),),
-                          Expanded(flex: 55,child: Text('Ken', style: Theme.of(context).textTheme.displayMedium,),)
+                          Expanded(flex: 55,child: Text(userModel.name.toString(), style: Theme.of(context).textTheme.displayMedium,),)
                         ],
                       ),),
                       Expanded(flex: 5,child: Container(),),
@@ -242,7 +244,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     onTap: (
 
                     ){
-                      
+
                     },
                     child: 
                 Row(

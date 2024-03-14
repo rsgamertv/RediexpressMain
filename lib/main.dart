@@ -90,7 +90,7 @@ class MyApp extends StatelessWidget {
           '/PackageInfo':(context) => PackageInfo(),
           '/ReadyPackageInfo':(context) => ReadyPackageInfo(null),
       },
-      initialRoute: '/MainPage',
+      initialRoute: '/Authorization',
     );
   }
 }
