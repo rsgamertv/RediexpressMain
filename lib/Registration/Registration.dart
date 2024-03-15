@@ -1,6 +1,6 @@
-import 'package:RediExpress/Models/UserModel.dart';
+import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:flutter/material.dart';
-import 'package:RediExpress/ThemesFolder/Style.dart';
+import 'package:RediExpress/core/Styles/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 
 class Registration extends StatefulWidget{

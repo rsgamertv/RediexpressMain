@@ -2,8 +2,8 @@ import 'package:RediExpress/Models/PackageModel.dart';
 import 'package:RediExpress/Packages/AllPackages.dart';
 import 'package:RediExpress/Packages/CurrentPackageInfoBase.dart';
 import 'package:RediExpress/Packages/ReadyPackageInfo.dart';
-import 'package:RediExpress/ThemesFolder/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/core/Styles/Style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

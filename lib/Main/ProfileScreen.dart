@@ -1,4 +1,4 @@
-import 'package:RediExpress/Models/UserModel.dart';
+import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:RediExpress/ThemesFolder/Theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,6 +19,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Profile',style: Theme.of(context).textTheme.titleLarge,),
         automaticallyImplyLeading: false,
         elevation: darkTheme.appBarTheme.elevation,

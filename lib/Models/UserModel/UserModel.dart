@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
 import 'package:dio/dio.dart';
 
-class UserModel{
+class UserModel {
   int? id;
   String? verCode;
   String? pin1,pin2,pin3,pin4,pin5,pin6;
@@ -12,7 +12,7 @@ class UserModel{
   String? password;
   String? name;
   String? phoneNumber;
-
+  @override
   Future<bool> checkIfExists() async{
     final response = await Dio().get(
       'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
@@ -79,4 +79,5 @@ class UserModel{
 
     return jsonResponse['success'];
   }
+
 }

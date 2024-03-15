@@ -3,7 +3,7 @@ import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../ThemesFolder/Style.dart';
+import '../core/Styles/Style.dart';
 
 class ReadyPackageInfo extends StatefulWidget{
   PackageModel? packageModel;

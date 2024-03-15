@@ -1,6 +1,7 @@
-import 'package:RediExpress/Models/UserModel.dart';
+import 'package:RediExpress/Authorization/bloc/bloc/authorization_bloc.dart';
+import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
-import 'package:RediExpress/ThemesFolder/Style.dart';
+import 'package:RediExpress/core/Styles/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,14 +14,19 @@ class Authorization extends StatefulWidget{
 class _AuthorizationState extends State<Authorization> {
   bool passwordVisible = false;
   bool? isChecked = false;
+  final _authorizationbloc = AuthorizationBloc();
   UserModel userModel = new UserModel();
-
   final emailController = new TextEditingController();
   final passwordController = new TextEditingController();
 
   void updatePasswordType(bool passwordVisible) => setState(() {
     this.passwordVisible = passwordVisible;
   });
+  @override
+  void initState() {
+    super.initState();
+    _authorizationbloc.add(MakeAuthEvent());
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

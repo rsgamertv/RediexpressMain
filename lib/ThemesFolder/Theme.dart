@@ -3,6 +3,7 @@ final darkBlue = '#001B3B';
 final lightTheme = ThemeData(
         primaryColor: Colors.blueAccent,
         cardColor: Colors.white,
+        canvasColor: Colors.white,
         backgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent, brightness: Brightness.light,),
         iconTheme: IconThemeData(
@@ -65,6 +66,7 @@ final lightTheme = ThemeData(
 final darkTheme = ThemeData(
         backgroundColor: Color.fromRGBO(0, 13, 29, 1),
         primaryColor: Colors.blueAccent,
+        canvasColor: Color.fromRGBO(0, 13, 29, 1),
         cardColor: Color.fromRGBO(0, 27, 59, 1),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent, brightness: Brightness.dark,),
         iconTheme: IconThemeData(

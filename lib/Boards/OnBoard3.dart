@@ -1,7 +1,7 @@
+import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:RediExpress/ThemesFolder/Style.dart';
-import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/core/Styles/Style.dart';
 
 class OnBoard3 extends StatelessWidget{
   @override

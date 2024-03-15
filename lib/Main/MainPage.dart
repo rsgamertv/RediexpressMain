@@ -1,5 +1,5 @@
 import 'package:RediExpress/Authorization/Authorization.dart';
-import 'package:RediExpress/Authorization/Registration.dart';
+import 'package:RediExpress/Registration/Registration.dart';
 import 'package:RediExpress/Main/ProfileScreen.dart';
 import 'package:RediExpress/Packages/AllPackages.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
@@ -35,7 +35,6 @@ class _MainPageState extends State<MainPage> {
         unselectedItemColor: Theme.of(context).iconTheme.color,
         unselectedLabelStyle: small_grey(),
         showUnselectedLabels: true,
-        fixedColor: Colors.black,
         onTap: _openPage,
         items:  [
           BottomNavigationBarItem(
