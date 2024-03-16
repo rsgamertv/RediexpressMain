@@ -1,12 +1,13 @@
 part of 'authorization_bloc.dart';
 
-sealed class AuthorizationEvent extends Equatable {
+class AuthorizationEvent extends Equatable {
   const AuthorizationEvent();
 
   @override
   List<Object> get props => [];
 }
-class MakeAuthEvent extends AuthorizationEvent{
-
-
+class SignInEvent extends AuthorizationEvent{
+  final String Email;
+  final String Password;
+  SignInEvent({required this.Email, required this.Password});
 }

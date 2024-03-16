@@ -1,4 +1,5 @@
 import 'package:RediExpress/Models/UserModel/UserModel.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/core/Styles/Style.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
@@ -17,7 +18,7 @@ class RegistrationWindowState extends State<Registration> {
   final _secondPasswordController = TextEditingController();
   final _fullNameController = TextEditingController();
   final _phoneNumberController = TextEditingController();
-  UserModel userModel = new UserModel();
+  UserModel userModel = new UserModel(dio:  Dio());
 
   void updatePasswordType(bool passwordVisible) => setState(() {
     this.passwordVisible = passwordVisible;

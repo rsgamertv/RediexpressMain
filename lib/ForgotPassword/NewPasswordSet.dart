@@ -61,7 +61,7 @@ class _NewPasswordSetState extends State<NewPasswordSet> {
 
     CurrentUserClass.user.password = _firstPasswordController.text.toString();
 
-    if(await CurrentUserClass.user.NewPasswordSet()){
+    if(await CurrentUserClass.user.newPasswordSet()){
       Navigator.of(context).pushNamed('/Authorization');
     }
     else{
