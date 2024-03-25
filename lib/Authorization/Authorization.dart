@@ -52,7 +52,7 @@ class _AuthorizationState extends State<Authorization> {
                 children: [
                   Text(
                     'Welcome Back',
-                    style: large_black(),
+                    style: Theme.of(context).textTheme.displayLarge,
                   ),
                   Text(
                     'Fill in your email and password to continue',

@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
         return MaterialApp(
-          theme: lightTheme,
+          theme: darkTheme,
           debugShowCheckedModeBanner: false,
           routes: routes,
-          initialRoute: '/Authorization',
+          initialRoute: '/OnBoard1',
         );
   }
 }

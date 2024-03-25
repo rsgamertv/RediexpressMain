@@ -201,7 +201,7 @@ class _OTPPasswordState extends State<OTPPassword> {
        CurrentUserClass.user.pin6 = _pin6.text;
 
         if(await CurrentUserClass.user.otpPassword()){
-          Navigator.of(context).pushNamed('/NewPasswordSet');
+          Navigator.of(context).pushNamed('/NewPassword');
         }
         else(
             print('плохо')

@@ -1,3 +1,5 @@
+import 'package:RediExpress/ForgotPassword/NewPasswordSet.dart';
+
 import '../Authorization/Authorization.dart';
 import '../Boards/OnBoard1.dart';
 import '../Boards/OnBoard2.dart';
@@ -19,6 +21,7 @@ final routes = {
         '/Authorization': (context) => Authorization(),
         '/ForgotPassword': (context) => ForgotPassword(),
         '/MainPage': (context) => MainPage(),
+        '/NewPassword':(context) => NewPasswordSet(),
         '/OtpPassword': (context) => OTPPassword(),
         '/AllPackages': (context) => AllPackages(),
         '/PackageInfoBase': (context) => PackageInfoBase(),

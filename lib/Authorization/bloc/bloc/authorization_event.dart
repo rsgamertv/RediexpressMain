@@ -6,8 +6,3 @@ class AuthorizationEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
-class SignInEvent extends AuthorizationEvent{
-  final String Email;
-  final String Password;
-  SignInEvent({required this.Email, required this.Password});
-}
