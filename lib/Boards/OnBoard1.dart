@@ -7,11 +7,9 @@ class OnBoard1 extends StatelessWidget {
    @override
   Widget build(BuildContext context) {
   return Scaffold(
-          appBar: AppBar(
-            
-          ),
         body: Column(
           children: [
+            SizedBox(height: 100,),
             Container(
               alignment: Alignment.topCenter,
               child: 

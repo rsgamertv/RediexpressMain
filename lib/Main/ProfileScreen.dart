@@ -1,9 +1,11 @@
 import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:RediExpress/ThemesFolder/Theme.dart';
+import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 class ProfileScreen extends StatefulWidget{
@@ -15,8 +17,10 @@ class ProfileScreen extends StatefulWidget{
 
 class _ProfileScreenState extends State<ProfileScreen> {
   UserModel userModel = new UserModel(dio: Dio());
+  
   @override
   Widget build(BuildContext context) {
+    final brightness = context.watch<ThemeCubit>().state.brightness;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
@@ -65,7 +69,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Expanded(flex: 4,child: Row(
               children: [
                 Expanded(flex: 54,child: Text('Enabled dark Mode', style: Theme.of(context).textTheme.displayLarge,),),
-                Expanded(flex: 10, child: CupertinoSwitch(value: false, onChanged: (v) {}) ),
+                Expanded(flex: 10, child: CupertinoSwitch(value: brightness == Brightness.dark , onChanged: (value) {
+                  context.read<ThemeCubit>().SetThemeBrightness(value ? Brightness.dark : Brightness.light);
+
+                }) ),
               ],
             ),),
             Expanded(flex: 3,child: Container(),),
@@ -278,7 +285,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 child:
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.of(context).pushNamed('/Authorization');
+                    },
                     child: 
                 Row(
                   children: [

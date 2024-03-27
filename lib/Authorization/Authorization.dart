@@ -1,6 +1,6 @@
 import 'package:RediExpress/Authorization/bloc/bloc/authorization_bloc.dart';
+import 'package:RediExpress/Main/MainPage.dart';
 import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
-import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:RediExpress/core/Styles/Style.dart';
 import 'package:dio/dio.dart';
@@ -41,7 +41,9 @@ class _AuthorizationState extends State<Authorization> {
             CircularProgressIndicator();
           }
           if(state is AuthorizationLoaded){
-            Navigator.of(context).pushNamed('/MainPage');
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+             Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => MainPage()));
+              });
           }
           final bloccommand = BlocProvider.of<AuthorizationBloc>(context);
           return Scaffold(
