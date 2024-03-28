@@ -1,3 +1,2 @@
 abstract interface class RememberPassInterface{ 
-  
 }

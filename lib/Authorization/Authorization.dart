@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Authorization extends StatefulWidget {
   @override
@@ -33,6 +34,7 @@ class _AuthorizationState extends State<Authorization> {
 
   @override
   Widget build(BuildContext context) {
+    bool isChecked = false;
     return BlocProvider(
       create: (context) => _authbloc,
       child: BlocBuilder<AuthorizationBloc, AuthorizationState>(
@@ -83,7 +85,9 @@ class _AuthorizationState extends State<Authorization> {
                         Container(
                           child: Row(
                             children: [
-                              Checkbox(value: false, onChanged: null),
+                              Checkbox(value: isChecked, onChanged: (value){
+                               isChecked = true;
+                              }),
                               Text(
                                 'Remember password',
                                 style: small_grey(),
