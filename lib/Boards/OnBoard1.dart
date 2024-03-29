@@ -34,7 +34,9 @@ class OnBoard1 extends StatelessWidget {
                         width: 120,
                         height: 50,
                         child:
-                        TextButton(onPressed: (){}, child: Text('Skip' , style: button_blue()))
+                        TextButton(onPressed: (){
+                          Navigator.of(context).pushNamed('/OnBoard3');
+                        }, child: Text('Skip' , style: button_blue()))
                       ),
                       Container(
                         decoration: filledboxdecoration(),

@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
 import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
 import 'package:RediExpress/ThemesFolder/Theme.dart';
@@ -8,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_it/get_it.dart';
 class ProfileScreen extends StatefulWidget{
   const ProfileScreen({super.key});
 
@@ -16,8 +20,9 @@ class ProfileScreen extends StatefulWidget{
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  UserModel userModel = new UserModel(dio: Dio());
-  
+  late int balance;
+  UserModel userModel = UserModel(dio: Dio());
+  AbstractUserModel abstractUserModel = GetIt.I<AbstractUserModel>();
   @override
   Widget build(BuildContext context) {
     final brightness = context.watch<ThemeCubit>().state.brightness;
@@ -48,14 +53,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Expanded(flex: 25,child:Row(
                         children: [
                           Expanded(flex: 15,child: Text('Hello', style: Theme.of(context).textTheme.displayMedium,),),
-                          Expanded(flex: 55,child: Text(userModel.name.toString(), style: Theme.of(context).textTheme.displayMedium,),)
+                          Expanded(flex: 55,child: Text(abstractUserModel.name.toString(), style: Theme.of(context).textTheme.displayMedium,),)
                         ],
                       ),),
                       Expanded(flex: 5,child: Container(),),
                       Expanded(flex: 20,child: Row(
                         children: [
                           Expanded(flex: 30,child: Text('Current balance: ', style: Theme.of(context).textTheme.displaySmall,),),
-                          Expanded(flex: 38,child: Text('N10,712:00',style: Theme.of(context).textTheme.headlineSmall,),)
+                          Expanded(flex: 38,child: Text(abstractUserModel.phoneNumber.toString(),style: Theme.of(context).textTheme.headlineSmall,),)
                         ],
                       ),),          
                       Expanded(flex: 35,child: Container(),)

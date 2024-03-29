@@ -117,6 +117,7 @@ class _AuthorizationState extends State<Authorization> {
                                 emailController.text.toString();
                             abstractUserModel.password =
                                 passwordController.text.toString();
+                            
                             bloccommand.add(AuthorizationEvent());
                           },
                           child: Text('Log in', style: button_white()),

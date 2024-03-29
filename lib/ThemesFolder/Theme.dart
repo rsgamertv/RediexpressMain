@@ -9,6 +9,7 @@ final lightTheme = ThemeData(
         ),
         secondaryHeaderColor: Colors.black,
         appBarTheme: const AppBarTheme(
+          surfaceTintColor: Colors.white,
           shadowColor: Color.fromRGBO(0,27,59,1),
           color: Colors.white,
             elevation: 2,
@@ -57,8 +58,13 @@ final lightTheme = ThemeData(
           titleLarge: TextStyle(
             fontSize: 24,
             color: Colors.grey,
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w500,
           ),
+          labelMedium: TextStyle(
+            fontSize: 16,
+            color: Colors.black54,
+            fontWeight: FontWeight.w500
+          )
         ), colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent, brightness: Brightness.light,).copyWith(background: Colors.white),
       );
 final darkTheme = ThemeData(
@@ -121,5 +127,10 @@ final darkTheme = ThemeData(
             color: Colors.grey,
             fontWeight: FontWeight.w500
           ),
+          labelMedium: TextStyle(
+            fontSize: 16,
+            color: Colors.white,
+            fontWeight: FontWeight.w500
+          )
         ), colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent, brightness: Brightness.dark,).copyWith(background: Color.fromRGBO(0, 13, 29, 1)),
 );
