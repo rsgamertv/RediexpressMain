@@ -1,12 +1,13 @@
-import 'package:RediExpress/Authorization/Authorization.dart';
+import 'package:RediExpress/Authorization/authorization.dart';
 import 'package:RediExpress/Authorization/bloc/bloc/authorization_bloc.dart';
-import 'package:RediExpress/Boards/OnBoard1.dart';
+import 'package:RediExpress/Boards/on_board_1.dart';
 import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
 import 'package:RediExpress/Models/UserModel/UserModel.dart';
-import 'package:RediExpress/ThemesFolder/Theme.dart';
+import 'package:RediExpress/Registration/bloc/registration_bloc.dart';
+import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';
 import 'package:RediExpress/core/routes.dart';
-import 'package:RediExpress/repositorires/Settings/SettingsRepository.dart';
+import 'package:RediExpress/repositorires/Settings/settings_interface.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,6 +42,12 @@ import 'package:shared_preferences/shared_preferences.dart';
         BlocProvider(
           create: (context) => ThemeCubit(repository: repo),
         ),
+        BlocProvider(
+          create: (context) => RegistrationBloc(GetIt.I<AbstractUserModel>()),
+        ),
+        BlocProvider(create: 
+        (context) => AuthorizationBloc(GetIt.I<AbstractUserModel>())
+        )
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {

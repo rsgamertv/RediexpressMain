@@ -12,10 +12,10 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
      emit(RegistrationLoading());
      final register = await abstractUserModel.register();
      if(register == true){
-      REgistrationLoaded(regaccept: register);
+      emit(REgistrationLoaded(regaccept: register));
      }
      else{
-      RegistrationFailure();
+      emit(RegistrationFailure());
      }
     });
   }

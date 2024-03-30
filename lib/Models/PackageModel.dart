@@ -1,4 +1,4 @@
-import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
+import 'package:RediExpress/StaticClasses/current_user_class.dart';
 import 'package:dio/dio.dart';
 
 class PackageModel{
