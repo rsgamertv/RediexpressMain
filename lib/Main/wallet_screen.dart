@@ -1,7 +1,8 @@
 import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
-import 'package:RediExpress/ThemesFolder/Theme.dart';
+import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 
@@ -14,6 +15,7 @@ class WalletScreen extends StatefulWidget {
 
 class _WalletScreenState extends State<WalletScreen> {
     AbstractUserModel abstractUserModel = GetIt.I<AbstractUserModel>();
+    
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,8 +65,8 @@ class _WalletScreenState extends State<WalletScreen> {
             Expanded(child: Container(),flex: 3,),
             Expanded(child: Container(
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.7),
-                borderRadius: BorderRadius.circular(10),
+                color: Theme.of(context).errorColor,
+                borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,10 +85,11 @@ class _WalletScreenState extends State<WalletScreen> {
                             ),
                             child: SvgPicture.asset('assets/bankImage.svg'),
                           ),
+                          SizedBox(height: 8,),
                           Text('Bank', style: Theme.of(context).textTheme.labelMedium,)
                         ],
                       ),
-                                            Column(
+                      Column(
                         children: [
                           Container(
                             decoration: BoxDecoration(
@@ -94,19 +97,26 @@ class _WalletScreenState extends State<WalletScreen> {
                             ),
                             child: SvgPicture.asset('assets/transferImage.svg'),
                           ),
+                          SizedBox(height: 8,),
                           Text('Transfer', style: Theme.of(context).textTheme.labelMedium,)
                         ],
                       ),
-                                            Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(120),
+                      GestureDetector(
+                        onTap: (){
+                          
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(120),
+                              ),
+                              child: SvgPicture.asset('assets/cardImage.svg'),
                             ),
-                            child: SvgPicture.asset('assets/cardImage.svg'),
-                          ),
-                          Text('Card', style: Theme.of(context).textTheme.labelMedium,)
-                        ],
+                            SizedBox(height: 8,),
+                            Text('Card', style: Theme.of(context).textTheme.labelMedium,)
+                          ],
+                        ),
                       )
                     ],
                   ),
@@ -114,14 +124,19 @@ class _WalletScreenState extends State<WalletScreen> {
                 ],
               ),
             ),flex: 20,),
-            Expanded(child: Container(),flex: 5,),
+            Expanded(child: Container(),flex: 2,),
             Expanded(child: Text('Transaction History', style: Theme.of(context).textTheme.displayLarge,),flex: 5,),
-            Expanded(child: Container(),flex: 5,),
-            Expanded(child: ListView.builder(
-              itemCount: 1,
+            Expanded(child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1,
+                childAspectRatio: 4.5,
+                mainAxisSpacing: 20,
+
+              ),
+              itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  height: 60,
+                  padding: EdgeInsets.only(top: 10),
                   decoration:  BoxDecoration(
                   color: Theme.of(context).cardColor,
                   boxShadow: [
@@ -136,19 +151,21 @@ class _WalletScreenState extends State<WalletScreen> {
                   children: [
                     Expanded(child: Container(),flex: 3,),
                     Expanded(flex: 40,child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(height: 5,),
                         Text('-N3,000.00', style: Theme.of(context).textTheme.displayLarge,),
-                        Text('Delivery fee', style: Theme.of(context).textTheme.displayMedium,)
+                        SizedBox(height: 8,),
+                        Text('Delivery fee', style: Theme.of(context).textTheme.displayMedium,),
                       ],
                     )),
-                    Expanded(child: Container(),flex: 57,)
+                    Expanded(child: Container(),flex: 31,),
+                    Expanded(child: Text('July 7, 2022' , style: Theme.of(context).textTheme.displayMedium,),flex: 40,),
                   ],
                 ),
                 );
               },
-            ),flex: 45,)
+            ),flex: 30,)
           ],
         ),
       ),

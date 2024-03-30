@@ -4,6 +4,7 @@ final lightTheme = ThemeData(
         primaryColor: Colors.blueAccent,
         cardColor: Colors.white,
         canvasColor: Colors.white,
+        errorColor: Colors.grey.withOpacity(0.4),
         iconTheme: const IconThemeData(
           color: Colors.grey,
         ),
@@ -69,6 +70,7 @@ final lightTheme = ThemeData(
       );
 final darkTheme = ThemeData(
         primaryColor: Colors.blueAccent,
+        errorColor: Color.fromRGBO(0, 27, 59, 1),
         canvasColor: Color.fromRGBO(0, 13, 29, 1),
         cardColor: Color.fromRGBO(0, 27, 59, 1),
         iconTheme: const IconThemeData(

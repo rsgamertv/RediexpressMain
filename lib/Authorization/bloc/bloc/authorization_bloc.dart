@@ -16,7 +16,8 @@ class AuthorizationBloc extends Bloc<AuthorizationEvent, AuthorizationState> {
       if(auth == true){
         emit(AuthorizationLoaded(authaccept: auth));
       }
-      else{
+      else {
+        emit(AuthorizationFailure());
         print('Иди туда');
       }
     });

@@ -1,17 +1,17 @@
-import 'package:RediExpress/ForgotPassword/NewPasswordSet.dart';
+import 'package:RediExpress/Boards/on_board_3.dart';
+import 'package:RediExpress/ForgotPassword/new_password.dart';
 
-import '../Authorization/Authorization.dart';
-import '../Boards/OnBoard1.dart';
-import '../Boards/OnBoard2.dart';
-import '../Boards/OnBoard3.dart';
-import '../ForgotPassword/ForgotPassword.dart';
-import '../ForgotPassword/OTPPassword.dart';
-import '../Main/MainPage.dart';
+import '../Authorization/authorization.dart';
+import '../Boards/on_board_1.dart';
+import '../Boards/on_board_2.dart';
+import '../ForgotPassword/forgot_password.dart';
+import '../ForgotPassword/otp_password.dart';
+import '../Main/main_page.dart';
 import '../Packages/AllPackages.dart';
 import '../Packages/PackageInfo.dart';
 import '../Packages/PackageInfoBase.dart';
 import '../Packages/ReadyPackageInfo.dart';
-import '../Registration/Registration.dart';
+import '../Registration/registration.dart';
 
 final routes = {
         '/OnBoard1': (context) => OnBoard1(),

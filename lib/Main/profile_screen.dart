@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
 import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
-import 'package:RediExpress/ThemesFolder/Theme.dart';
+import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';

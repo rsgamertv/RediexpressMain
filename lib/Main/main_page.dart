@@ -1,10 +1,10 @@
-import 'package:RediExpress/Authorization/Authorization.dart';
-import 'package:RediExpress/Main/WalletScreen.dart';
-import 'package:RediExpress/Registration/Registration.dart';
-import 'package:RediExpress/Main/ProfileScreen.dart';
+import 'package:RediExpress/Authorization/authorization.dart';
+import 'package:RediExpress/Main/wallet_screen.dart';
+import 'package:RediExpress/Registration/registration.dart';
+import 'package:RediExpress/Main/profile_screen.dart';
 import 'package:RediExpress/Packages/AllPackages.dart';
 import 'package:RediExpress/ThemesFolder/TextStyles.dart';
-import 'package:RediExpress/ThemesFolder/Theme.dart';
+import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

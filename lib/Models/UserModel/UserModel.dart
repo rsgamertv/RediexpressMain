@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
-import 'package:RediExpress/StaticClasses/CurrentUserClass.dart';
+import 'package:RediExpress/StaticClasses/current_user_class.dart';
 import 'package:dio/dio.dart';
 
 class UserModel extends AbstractUserModel{
@@ -11,6 +11,7 @@ class UserModel extends AbstractUserModel{
   UserModel({required this.dio});
   @override
   Future<bool> checkIfExists() async{
+    AbstractUserModel userModel;
     final response = await dio.get(
       'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
     );
@@ -26,7 +27,6 @@ class UserModel extends AbstractUserModel{
     this.password = json['data']['Password'];
     this.name = json['data']['Name'];
     this.phoneNumber = json['data']['PhoneNumber'];
-
     return true;
   }
   @override

@@ -1,4 +1,4 @@
-import 'package:RediExpress/repositorires/Settings/SettingsRepository.dart';
+import 'package:RediExpress/repositorires/Settings/settings_interface.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
