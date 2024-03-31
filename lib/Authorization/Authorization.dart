@@ -52,9 +52,9 @@ class _AuthorizationState extends State<Authorization> {
         }
         if(state is AuthorizationFailure){
           Navigator.of(context).pop();
+          Navigator.of(context).pushNamed('/Authorization');
           showSnackBar(context, 'Не удалось зайти');
         }
-
         }
         else{
           showSnackBar(context, 'Введите логин и пароль');

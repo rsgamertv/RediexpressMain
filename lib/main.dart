@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+  String ip = '83.147.245.57:8080';
   Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
@@ -56,7 +56,7 @@ import 'package:shared_preferences/shared_preferences.dart';
             state.brightness == Brightness.light ? lightTheme : darkTheme,
             debugShowCheckedModeBanner: false,
             routes: routes,
-            initialRoute: '/MainPage',
+            initialRoute: '/Authorization',
           );
         },
       ),
