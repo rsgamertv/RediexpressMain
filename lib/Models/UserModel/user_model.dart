@@ -13,7 +13,7 @@ class UserModel extends AbstractUserModel{
   Future<bool> checkIfExists() async{
     AbstractUserModel userModel;
     final response = await dio.get(
-      'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
+      'http://83.147.245.57/users?email=${this.email}&password=${this.password}'
     );
 
     final json = response.data as Map<String, dynamic>;
@@ -25,7 +25,7 @@ class UserModel extends AbstractUserModel{
     this.id = json['data']['Id'];
     this.email = json['data']['Email'];
     this.password = json['data']['Password'];
-    this.name = json['data']['Name'];
+    this.name = json['data']['name'];
     this.phoneNumber = json['data']['PhoneNumber'];
     return true;
   }
@@ -39,7 +39,7 @@ class UserModel extends AbstractUserModel{
     json['PhoneNumber'] = this.phoneNumber!;
 
     final response = await dio.post(
-      'http://83.147.245.57/user_add', data: json
+      'http://83.147.245.57/users/', data: json
     );
 
     final jsonResponse = response.data as Map<String,dynamic>;

@@ -27,7 +27,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final brightness = context.watch<ThemeCubit>().state.brightness;
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         centerTitle: true,
         title: Text('Profile',style: Theme.of(context).textTheme.titleLarge,),

@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Theme.of(context).errorColor,
+                    color: Theme.of(context).hoverColor,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 3,
@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Theme.of(context).errorColor,
+                    color: Theme.of(context).hoverColor,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 3,
@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Theme.of(context).errorColor,
+                    color: Theme.of(context).hoverColor,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 3,
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).errorColor,
+                      color: Theme.of(context).hoverColor,
                       boxShadow: [
                         BoxShadow(
                           blurRadius: 3,
