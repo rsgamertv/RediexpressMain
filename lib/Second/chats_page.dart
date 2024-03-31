@@ -1,4 +1,7 @@
+import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/core/Styles/style.dart';
+import 'package:RediExpress/main.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -82,4 +85,4 @@ class _ChatPageState extends State<ChatPage> {
       ),
     );
   }
-}
+  }

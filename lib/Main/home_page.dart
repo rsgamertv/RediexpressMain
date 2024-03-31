@@ -51,9 +51,9 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 10,),
+                      SizedBox(height: 20,),
                       Text('Hello' +  ' ' + abstractUserModel.name.toString() , style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.w600
                       ),),
