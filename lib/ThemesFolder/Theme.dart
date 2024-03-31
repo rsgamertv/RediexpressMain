@@ -4,6 +4,7 @@ final lightTheme = ThemeData(
         primaryColor: Colors.blueAccent,
         cardColor: Colors.white,
         canvasColor: Colors.white,
+        dividerColor: Colors.blueAccent,
         errorColor: Colors.grey.withOpacity(0.4),
         iconTheme: const IconThemeData(
           color: Colors.grey,
@@ -21,6 +22,10 @@ final lightTheme = ThemeData(
             color: Colors.black,
             fontWeight: FontWeight.w500,
           ),
+          labelSmall: TextStyle(
+            fontSize: 8,
+            color: Colors.black87,
+          ),
           displayMedium: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -34,17 +39,17 @@ final lightTheme = ThemeData(
           headlineSmall: TextStyle(
             fontSize: 14,
             color: Colors.blueAccent,
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w600
           ),
           headlineMedium: TextStyle(
             fontSize: 18,
             color: Colors.blueAccent,
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w600
           ),
           headlineLarge: TextStyle(
             fontSize: 24,
             color: Colors.blueAccent,
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w600
           ),
           titleSmall: TextStyle(
             fontSize: 14,
@@ -72,7 +77,8 @@ final darkTheme = ThemeData(
         primaryColor: Colors.blueAccent,
         errorColor: Color.fromRGBO(0, 27, 59, 1),
         canvasColor: Color.fromRGBO(0, 13, 29, 1),
-        cardColor: Color.fromRGBO(0, 27, 59, 1),
+        cardColor: Color.fromRGBO(0, 27, 59, 1), 
+        dividerColor: Color.fromRGBO(0, 27, 59, 1),
         iconTheme: const IconThemeData(
           color: Colors.white
         ),
@@ -82,8 +88,11 @@ final darkTheme = ThemeData(
           surfaceTintColor: Color.fromRGBO(0, 13, 29, 1),
           elevation: 2,
         ),
-        
         textTheme: const TextTheme(
+          labelSmall: TextStyle(
+            fontSize: 8,
+            color: Colors.white,
+          ),
           displaySmall: TextStyle(
             fontSize: 14,
             color: Colors.white,
@@ -102,17 +111,17 @@ final darkTheme = ThemeData(
           headlineSmall: TextStyle(
             fontSize: 14,
             color: Colors.blueAccent,
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w600
           ),
           headlineMedium: TextStyle(
             fontSize: 18,
             color: Colors.blueAccent,
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w600
           ),
           headlineLarge: TextStyle(
             fontSize: 24,
             color: Colors.blueAccent,
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w600
           ),
           titleSmall: TextStyle(
             fontSize: 14,

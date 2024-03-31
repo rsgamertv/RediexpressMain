@@ -26,6 +26,15 @@ BoxDecoration white_decoration(){
     borderRadius: BorderRadius.circular(5),
   );
 }
+BoxDecoration avatar_decoration(){
+  return BoxDecoration(
+    border: Border.all(
+        width: 2,
+        color: Colors.white
+    ),
+    borderRadius: BorderRadius.circular(300),
+  );
+}
 
 InputDecoration field_decoration(String hint){
   return InputDecoration(
