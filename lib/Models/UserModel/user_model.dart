@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
+import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/StaticClasses/current_user_class.dart';
 import 'package:dio/dio.dart';
 

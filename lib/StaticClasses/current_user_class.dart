@@ -1,4 +1,4 @@
-import 'package:RediExpress/Models/UserModel/UserModel.dart';
+import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:dio/dio.dart';
 
 class CurrentUserClass {

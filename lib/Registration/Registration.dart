@@ -1,5 +1,6 @@
-import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
-import 'package:RediExpress/Models/UserModel/UserModel.dart';
+import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
+import 'package:RediExpress/Models/UserModel/user_model.dart';
+import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/Registration/bloc/registration_bloc.dart';
 import 'package:RediExpress/helpers.dart';
 import 'package:dio/dio.dart';

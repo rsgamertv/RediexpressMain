@@ -1,4 +1,5 @@
 import 'package:RediExpress/Authorization/authorization.dart';
+import 'package:RediExpress/Main/home_page.dart';
 import 'package:RediExpress/Main/wallet_screen.dart';
 import 'package:RediExpress/Registration/registration.dart';
 import 'package:RediExpress/Main/profile_screen.dart';
@@ -22,7 +23,7 @@ class _MainPageState extends State<MainPage> {
       body: PageView(
         controller: _pagecontroller,
         children: [
-          Scaffold(),
+          HomePage(),
           WalletScreen(),
           Scaffold(),
           ProfileScreen(),

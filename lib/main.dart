@@ -1,8 +1,8 @@
 import 'package:RediExpress/Authorization/authorization.dart';
 import 'package:RediExpress/Authorization/bloc/bloc/authorization_bloc.dart';
 import 'package:RediExpress/Boards/on_board_1.dart';
-import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
-import 'package:RediExpress/Models/UserModel/UserModel.dart';
+import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
+import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/Registration/bloc/registration_bloc.dart';
 import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';

@@ -1,4 +1,4 @@
-import 'package:RediExpress/Models/PackageModel.dart';
+import 'package:RediExpress/Models/package_model.dart';
 import 'package:RediExpress/Packages/all_packages.dart';
 import 'package:RediExpress/Packages/current_package.dart';
 import 'package:RediExpress/Packages/ready_package_info.dart';
