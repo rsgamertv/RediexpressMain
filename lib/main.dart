@@ -56,7 +56,7 @@ import 'package:shared_preferences/shared_preferences.dart';
             state.brightness == Brightness.light ? lightTheme : darkTheme,
             debugShowCheckedModeBanner: false,
             routes: routes,
-            initialRoute: '/OnBoard1',
+            initialRoute: '/MainPage',
           );
         },
       ),

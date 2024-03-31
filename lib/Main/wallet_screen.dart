@@ -103,7 +103,7 @@ class _WalletScreenState extends State<WalletScreen> {
                       ),
                       GestureDetector(
                         onTap: (){
-                          
+                          Navigator.of(context).pushNamed('/CardsPage');
                         },
                         child: Column(
                           children: [

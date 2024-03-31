@@ -5,7 +5,7 @@ import 'package:RediExpress/helpers.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/core/Styles/Style.dart';
-import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 

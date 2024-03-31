@@ -1,4 +1,4 @@
-import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:RediExpress/core/Styles/style.dart';

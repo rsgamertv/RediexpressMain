@@ -1,5 +1,5 @@
 import 'package:RediExpress/Main/main_page.dart';
-import 'package:RediExpress/Packages/PackageInfo.dart';
+import 'package:RediExpress/Packages/package_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

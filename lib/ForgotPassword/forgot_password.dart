@@ -1,6 +1,6 @@
 import 'package:RediExpress/Models/UserModel/UserModel.dart';
 import 'package:RediExpress/StaticClasses/current_user_class.dart';
-import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/core/Styles/style.dart';
 

@@ -1,6 +1,6 @@
-import 'package:RediExpress/Packages/CurrentPackageInfoBase.dart';
-import 'package:RediExpress/Packages/PackageInfo.dart';
-import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/Packages/current_package.dart';
+import 'package:RediExpress/Packages/package_info.dart';
+import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

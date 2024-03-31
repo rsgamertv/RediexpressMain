@@ -2,7 +2,7 @@ import 'package:RediExpress/Authorization/bloc/bloc/authorization_bloc.dart';
 import 'package:RediExpress/Main/main_page.dart';
 import 'package:RediExpress/Models/UserModel/AbstractUserModel.dart';
 import 'package:RediExpress/Models/UserModel/UserModel.dart';
-import 'package:RediExpress/ThemesFolder/TextStyles.dart';
+import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:RediExpress/core/Styles/style.dart';
 import 'package:RediExpress/helpers.dart';
 import 'package:dio/dio.dart';
