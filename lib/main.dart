@@ -24,9 +24,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 }
 
   class MyApp extends StatefulWidget {
-    const MyApp({super.key, required this.preferences
-    
-    });
+    const MyApp({super.key, required this.preferences});
     final SharedPreferences preferences;
   
     @override
