@@ -36,7 +36,7 @@ class _WalletScreenState extends State<WalletScreen> {
                 children: [
                   const Expanded(flex: 18,child: CircleAvatar(
                     backgroundImage: AssetImage('assets/manimage.png'), 
-                    radius: 100,
+                    radius: 40,
                   ),),
                   Expanded(child: Container(),flex: 5,),
                   Expanded(flex: 70,child: Column(

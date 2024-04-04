@@ -5,6 +5,7 @@ import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';
+import 'package:RediExpress/main.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class ProfileScreen extends StatefulWidget{
   const ProfileScreen({super.key});
 
@@ -43,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   const Expanded(flex: 18,child: CircleAvatar(
                     backgroundImage: AssetImage('assets/manimage.png'), 
-                    radius: 100,
+                    radius: 40,
                   ),),
                   Expanded(child: Container(),flex: 5,),
                   Expanded(flex: 70,child: Column(
@@ -289,8 +291,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 child:
                   GestureDetector(
-                    onTap: (){
+                    onTap: ()async{
                       Navigator.of(context).pushNamed('/Authorization');
+                      SharedPreferences preferences = await SharedPreferences.getInstance();
+                      preferences.remove('email');
                     },
                     child: 
                 Row(

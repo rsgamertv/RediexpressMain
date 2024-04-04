@@ -19,7 +19,7 @@ class Authorization extends StatefulWidget {
 
 class _AuthorizationState extends State<Authorization> {
   bool passwordVisible = false;
-  bool? isChecked = false;
+  bool isChecked = false;
   UserModel userModel = UserModel(dio: Dio());
   AbstractUserModel abstractUserModel = GetIt.I<AbstractUserModel>();
   final _authbloc = AuthorizationBloc(GetIt.I<AbstractUserModel>());
@@ -33,11 +33,16 @@ class _AuthorizationState extends State<Authorization> {
   void initState() {
     super.initState();
     GetIt.I<AbstractUserModel>();
+    isChecked = false;
+  }
+  setRememberPassword(bool value){
+    setState(() {
+      isChecked = value;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    bool? isChecked = false;
     final bloccommand = BlocProvider.of<AuthorizationBloc>(context);
     return BlocListener<AuthorizationBloc, AuthorizationState>(
       listener: (BuildContext context, AuthorizationState state) { 
@@ -99,7 +104,8 @@ class _AuthorizationState extends State<Authorization> {
                       value: isChecked,
                       onChanged: (newBool) {
                         setState(() {
-                          isChecked = newBool;
+                          print(newBool);
+                          isChecked = newBool!;
                         });
                       },
                       activeColor: Theme.of(context).primaryColor,
@@ -127,12 +133,20 @@ class _AuthorizationState extends State<Authorization> {
                   Container(
                     decoration: filledboxdecoration(),
                     child: TextButton(
-                      onPressed: () {
+                      onPressed: () async{
                         abstractUserModel.email =
                             emailController.text.toString();
                         abstractUserModel.password =
                             passwordController.text.toString();
                         bloccommand.add(AuthorizationEvent());
+                        if(isChecked == true){
+                          SharedPreferences preferences = await SharedPreferences.getInstance();
+                          preferences.setString('email', emailController.text.toString());
+                          preferences.setString('password', passwordController.text.toString());
+                        }
+                        else{
+                          print('не вышло');
+                        }
                       },
                       child: Text('Log in', style: button_white()),
                     ),
