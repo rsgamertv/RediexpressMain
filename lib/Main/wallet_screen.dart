@@ -62,7 +62,6 @@ class _WalletScreenState extends State<WalletScreen> {
 
                 ],
             ),),
-            Expanded(child: Container(),flex: 3,),
             Expanded(child: Container(
               decoration: BoxDecoration(
                 color: Theme.of(context).errorColor,
@@ -123,7 +122,7 @@ class _WalletScreenState extends State<WalletScreen> {
                   
                 ],
               ),
-            ),flex: 20,),
+            ),flex: 16,),
             Expanded(child: Container(),flex: 2,),
             Expanded(child: Text('Transaction History', style: Theme.of(context).textTheme.displayLarge,),flex: 5,),
             Expanded(child: GridView.builder(
