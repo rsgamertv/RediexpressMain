@@ -160,7 +160,9 @@ class _ReadyPackageInfoState extends State<ReadyPackageInfo> {
                         decoration: decoration(),
                         height: 50,
                         child:
-                        TextButton(onPressed: (){}, child: Text('Skip' , style: button_blue()))
+                        TextButton(onPressed: (){
+                              Navigator.of(context).pushNamed('/PackageInfoMap');
+                        }, child: Text('Skip' , style: button_blue()))
                       ),
                       flex: 10,
                     ),
@@ -170,7 +172,7 @@ class _ReadyPackageInfoState extends State<ReadyPackageInfo> {
                         decoration: filledboxdecoration(),
                         height: 50,
                         child: TextButton(onPressed: (){
-                          Navigator.of(context).pushNamed('/OnBoard2');
+                          Navigator.of(context).pushNamed('/PackageInfoMap');
                         }, child: Text('Next', style: button_white())),
                       ),
                       flex: 10,

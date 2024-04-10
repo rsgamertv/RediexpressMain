@@ -1,5 +1,6 @@
 import 'package:RediExpress/Boards/on_board_3.dart';
 import 'package:RediExpress/ForgotPassword/new_password.dart';
+import 'package:RediExpress/Packages/packageinfo_map.dart';
 import 'package:RediExpress/Second/card_page.dart';
 import 'package:RediExpress/Second/chats_page.dart';
 
@@ -30,5 +31,6 @@ final routes = {
         '/PackageInfo': (context) => PackageInfo(),
         '/ReadyPackageInfo': (context) => ReadyPackageInfo(null),
         '/CardsPage':(context) => CardPage(),
-        '/ChatsPage':(context) => ChatPage()
+        '/ChatsPage':(context) => ChatPage(),
+        '/PackageInfoMap':(context) => PackageInfoMap()
 };

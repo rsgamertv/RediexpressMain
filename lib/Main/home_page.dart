@@ -124,28 +124,33 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),flex: 45,),
                 Expanded(child: Container(),flex: 5,),
-                Expanded(child: Container(
-                  padding: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Theme.of(context).hoverColor,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 3,
-                        offset: Offset(0,2),
-                        color: Colors.grey.withOpacity(0.1)
-                      )
-                    ]
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(child: Container(),flex:5 ,),
-                      Expanded(child: SvgPicture.asset('assets/send_package.svg'),flex: 30,),
-                      Expanded(child: Text('Send a package',  style: Theme.of(context).textTheme.headlineMedium,),flex: 20,),
-                      Expanded(child: Text('Send a package Request for a driver to pick up or deliver your package for you', style: Theme.of(context).textTheme.labelSmall,), flex: 40,),
-                      Expanded(child: Container(),flex: 5,)
-                    ],
+                Expanded(child: GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).pushNamed('/PackageInfoMap');
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Theme.of(context).hoverColor,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 3,
+                          offset: Offset(0,2),
+                          color: Colors.grey.withOpacity(0.1)
+                        )
+                      ]
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(child: Container(),flex:5 ,),
+                        Expanded(child: SvgPicture.asset('assets/send_package.svg'),flex: 30,),
+                        Expanded(child: Text('Send a package',  style: Theme.of(context).textTheme.headlineMedium,),flex: 20,),
+                        Expanded(child: Text('Send a package Request for a driver to pick up or deliver your package for you', style: Theme.of(context).textTheme.labelSmall,), flex: 40,),
+                        Expanded(child: Container(),flex: 5,)
+                      ],
+                    ),
                   ),
                 ),flex: 45,),
               ],
