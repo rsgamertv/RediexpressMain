@@ -13,17 +13,32 @@ class UserModel extends AbstractUserModel{
   @override
   Future<bool> checkIfExists() async{
     AbstractUserModel userModel;
+    try{
     final response = await dio.get(
       'http://${ip}/users?email=${this.email}&password=${this.password}'
     );
-
-    final json = response.data as Map<String, dynamic>;
     
+    if(response.statusCode == 200){
+    final json = response.data as Map<String, dynamic>;
+    print('прошло');
     this.id = json['data']['id'];
     this.email = json['data']['email'];
     this.password = json['data']['password'];
     this.name = json['data']['name'];
     return true;
+    } return false;} on DioException catch (error){
+      if(error.response != null){
+        print('даже я ошибаюсь');
+        return false;
+      }
+      else{
+        print('хз что');
+        return false;
+      }
+    } catch (e){
+      print('другя ошибка');
+      return false;
+    }
   }
   @override
   Future<bool> register() async{

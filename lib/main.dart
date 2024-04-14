@@ -47,7 +47,17 @@ import 'package:shared_preferences/shared_preferences.dart';
       final prefs = await SharedPreferences.getInstance();
       abstractUserModel.email = email;
       abstractUserModel.password = password;
-      abstractUserModel.checkIfExists();
+      final auth = await abstractUserModel.checkIfExists();
+      if(auth == true){
+        print(' оно работает');
+      }
+      else if (auth == false){
+        prefs.remove('email');
+        prefs.remove('password');
+        Navigator.of(context).pushNamed('/Authorization');
+        print('не те данные');
+      }
+      
     }
     @override
     void initState() {

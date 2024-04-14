@@ -62,6 +62,8 @@ class _AuthorizationState extends State<Authorization> {
         }
         }
         else{
+          Navigator.of(context).pop();
+          Navigator.of(context).pushNamed('/Authorization');
           showSnackBar(context, 'Введите логин и пароль');
         }
       },
