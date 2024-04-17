@@ -292,9 +292,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child:
                   GestureDetector(
                     onTap: ()async{
-                      Navigator.of(context).pushNamed('/Authorization');
                       SharedPreferences preferences = await SharedPreferences.getInstance();
                       preferences.remove('email');
+                      Navigator.of(context).pushNamed('/Authorization');
                     },
                     child: 
                 Row(
