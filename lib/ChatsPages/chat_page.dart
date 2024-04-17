@@ -1,7 +1,9 @@
+import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/Models/UserModel/static_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 import '../Models/UserModel/user_model.dart';
@@ -131,11 +133,11 @@ class _ChatPageState extends State<ChatPage> {
   Widget messageBubble(MessageModel message){
     final size = MediaQuery.sizeOf(context);
 
-    final alignment = (message.user_id != StaticModel.staticModel.id)
+    final alignment = (message.user_id != GetIt.I<AbstractUserModel>().id)
         ? Alignment.centerRight
         : Alignment.centerLeft;
 
-    final color = (message.user_id == StaticModel.staticModel.id)
+    final color = (message.user_id == GetIt.I<AbstractUserModel>().id)
         ? Theme.of(context).colorScheme.primary
         : Colors.grey;
 
@@ -173,6 +175,8 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   Future<void> _initAllMessages() async{
+    messages.clear();
+
     var response = await Dio().get(
       'http://$ip/chats/$room_id'
     );
@@ -180,7 +184,10 @@ class _ChatPageState extends State<ChatPage> {
     List<dynamic> data = (response.data as Map<String, dynamic>)['data'];
 
     data.forEach((msg) {
-      messages.add(MessageModel(user_id: msg['user_id'], message: msg['message']));
+      if(msg['message'].toString().length > 0) {
+        messages.add(
+            MessageModel(user_id: msg['user_id'], message: msg['message']));
+      }
     });
 
     setState(() {
