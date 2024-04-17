@@ -133,13 +133,13 @@ class _ChatPageState extends State<ChatPage> {
   Widget messageBubble(MessageModel message){
     final size = MediaQuery.sizeOf(context);
 
-    final alignment = (message.user_id != GetIt.I<AbstractUserModel>().id)
-        ? Alignment.centerRight
-        : Alignment.centerLeft;
+    final alignment = (message.user_id == GetIt.I<AbstractUserModel>().id)
+        ? Alignment.centerLeft
+        : Alignment.centerRight;
 
     final color = (message.user_id == GetIt.I<AbstractUserModel>().id)
-        ? Theme.of(context).colorScheme.primary
-        : Colors.grey;
+        ? Colors.grey :
+        Theme.of(context).colorScheme.primary;
 
     final textColor = Colors.white;
 
@@ -185,7 +185,7 @@ class _ChatPageState extends State<ChatPage> {
 
     data.forEach((msg) {
       if(msg['message'].toString().length > 0) {
-        messages.add(
+        messages.add (
             MessageModel(user_id: msg['user_id'], message: msg['message']));
       }
     });
