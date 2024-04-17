@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/ThemesFolder/text_styles.dart';
@@ -14,8 +12,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 class ProfileScreen extends StatefulWidget{
-  const ProfileScreen({super.key});
+  const ProfileScreen({super.key}); 
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();

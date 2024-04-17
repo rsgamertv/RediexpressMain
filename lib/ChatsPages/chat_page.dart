@@ -167,6 +167,7 @@ class _ChatPageState extends State<ChatPage> {
     if (_controller.text.isNotEmpty) {
       setState(() {
          _channel.sink.add(_controller.text);
+         _initAllMessages();
       });
     }
   }

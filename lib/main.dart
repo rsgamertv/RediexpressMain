@@ -15,7 +15,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
-  String ip = '83.147.245.57:8080';
+
+  String ip = '127.0.0.1:80';
   var email;
   var password;
   AbstractUserModel abstractUserModel = GetIt.I<AbstractUserModel>();
