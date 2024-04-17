@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sizer/sizer.dart';
   String ip = '83.147.245.57:8080';
   var email;
   var password;
@@ -83,6 +84,7 @@ import 'package:shared_preferences/shared_preferences.dart';
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
+          return Sizer(builder: (context, orientation, deviceType){
           return MaterialApp(
             home: email == null ? Authorization() : MainPage(),
             theme:
@@ -90,6 +92,7 @@ import 'package:shared_preferences/shared_preferences.dart';
             debugShowCheckedModeBanner: false,
             routes: routes,
           );
+          });
         },
       ),
     );
