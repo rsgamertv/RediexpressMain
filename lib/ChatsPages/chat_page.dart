@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/Models/UserModel/static_model.dart';
 import 'package:dio/dio.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -11,11 +12,12 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 
 import '../Models/UserModel/user_model.dart';
 import '../main.dart';
+import 'drop_down_button.dart';
 import 'message_model.dart';
 
 class ChatPage extends StatefulWidget{
   @override
-  State<ChatPage> createState() => _ChatPageState(room_id, other_user);
+  State<ChatPage> createState() => ChatPageState(room_id, other_user);
 
   late int room_id;
   late UserModel other_user;
@@ -26,30 +28,32 @@ class ChatPage extends StatefulWidget{
   }
 }
 
-class _ChatPageState extends State<ChatPage> {
+class ChatPageState extends State<ChatPage> {
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
-  late WebSocketChannel _channel;
 
+  late WebSocketChannel _channel;
   late int room_id;
   late UserModel other_user;
 
-  _ChatPageState(int room_id, UserModel other_user){
+  ChatPageState(int room_id, UserModel other_user){
     this.room_id = room_id;
     this.other_user = other_user;
 
     this._channel = WebSocketChannel.connect(
-    Uri.parse('ws://$ip/chats/${room_id}/${other_user.id}'),
-  );
+      Uri.parse('ws://$ip/chats/${room_id}/${other_user.id}'),
+    );
   }
 
   List<MessageModel> messages = [];
 
   @override
   void initState() {
+    super.initState();
+
     _initAllMessages();
 
-    _channel.stream.listen((event) {
+    _channel.stream.listen((event) async {
       if(event.toString().length > 0){
         var data = event.toString();
 
@@ -62,11 +66,11 @@ class _ChatPageState extends State<ChatPage> {
           messages;
         });
 
+        await Future.delayed(Duration(milliseconds: 100));
+
         _scrollDown();
       }
     });
-
-    super.initState();
   }
 
   @override
@@ -74,21 +78,12 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Column(
-          children: [
-            // const SizedBox(height: 2.0),
-            Text(
-              other_user.name!,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ],
+        title: Text(
+          other_user.name!,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.more_vert),
-          ),
-          const SizedBox(width: 8.0),
+          getDropDownButton(context, this),
         ],
       ),
       body: SafeArea(
@@ -209,7 +204,8 @@ class _ChatPageState extends State<ChatPage> {
     data.forEach((msg) {
       if(msg['message'].toString().length > 0) {
         messages.add (
-            MessageModel(user_id: msg['user_id'], message: msg['message']));
+            MessageModel(user_id: msg['user_id'], message: msg['message'])
+        );
       }
     });
 
@@ -217,7 +213,26 @@ class _ChatPageState extends State<ChatPage> {
       messages;
     });
 
+    await Future.delayed(Duration(milliseconds: 100));
+
     _scrollDown();
+  }
+
+  Future<void> clearAllMessages() async{
+    try {
+      var response = await Dio().delete(
+          'http://$ip/chats/$room_id'
+      );
+
+      messages.clear();
+
+      setState(() {
+        messages;
+      });
+    }
+    catch (e){
+      print('could not delete messages');
+    }
   }
 
   void _scrollDown(){
