@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/Models/UserModel/static_model.dart';
 import 'package:dio/dio.dart';
@@ -25,6 +28,7 @@ class ChatPage extends StatefulWidget{
 
 class _ChatPageState extends State<ChatPage> {
   final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
   late WebSocketChannel _channel;
 
   late int room_id;
@@ -44,6 +48,24 @@ class _ChatPageState extends State<ChatPage> {
   @override
   void initState() {
     _initAllMessages();
+
+    _channel.stream.listen((event) {
+      if(event.toString().length > 0){
+        var data = event.toString();
+
+        int user_id = int.parse(data.substring(0, data.indexOf(':')));
+        String message =  data.substring(data.indexOf(':') + 2);
+
+        messages.add(MessageModel(user_id: user_id, message: message));
+
+        setState(() {
+          messages;
+        });
+
+        _scrollDown();
+      }
+    });
+
     super.initState();
   }
 
@@ -57,7 +79,7 @@ class _ChatPageState extends State<ChatPage> {
             // const SizedBox(height: 2.0),
             Text(
               other_user.name!,
-              style: Theme.of(context).textTheme.bodySmall,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
         ),
@@ -82,6 +104,7 @@ class _ChatPageState extends State<ChatPage> {
               Expanded(
                 child: ListView.builder(
                   itemCount: messages.length,
+                  controller: _scrollController,
                   itemBuilder: (context, index) {
                     final message = messages[index];
 
@@ -169,7 +192,6 @@ class _ChatPageState extends State<ChatPage> {
     if (_controller.text.isNotEmpty) {
       setState(() {
          _channel.sink.add(_controller.text);
-         _initAllMessages();
       });
     }
   }
@@ -193,12 +215,22 @@ class _ChatPageState extends State<ChatPage> {
     setState(() {
       messages;
     });
+
+    _scrollDown();
+  }
+
+  void _scrollDown(){
+    _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.fastLinearToSlowEaseIn);
   }
 
   @override
   void dispose() {
     _channel.sink.close();
     _controller.dispose();
+    _scrollController.dispose();
 
     super.dispose();
   }
