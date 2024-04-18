@@ -42,7 +42,7 @@ class _AuthorizationState extends State<Authorization> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     final bloccommand = BlocProvider.of<AuthorizationBloc>(context);
     return BlocListener<AuthorizationBloc, AuthorizationState>(
       listener: (BuildContext context, AuthorizationState state) { 
@@ -59,6 +59,7 @@ class _AuthorizationState extends State<Authorization> {
           Navigator.of(context).pop();
           Navigator.of(context).pushNamed('/Authorization');
           showSnackBar(context, 'Не удалось зайти');
+          
         }
         }
         else{
@@ -136,17 +137,19 @@ class _AuthorizationState extends State<Authorization> {
                     decoration: filledboxdecoration(),
                     child: TextButton(
                       onPressed: () async{
+                        SharedPreferences preferences =  await SharedPreferences.getInstance();
                         abstractUserModel.email =
                             emailController.text.toString();
                         abstractUserModel.password =
                             passwordController.text.toString();
                         bloccommand.add(AuthorizationEvent());
                         if(isChecked == true){
-                          SharedPreferences preferences = await SharedPreferences.getInstance();
                           preferences.setString('email', emailController.text.toString());
                           preferences.setString('password', passwordController.text.toString());
                         }
-                        else{
+                        else {
+                          preferences.remove('email');
+                          preferences.remove('password');
                           print('не вышло');
                         }
                       },
