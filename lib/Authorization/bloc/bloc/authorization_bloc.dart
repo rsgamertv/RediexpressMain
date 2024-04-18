@@ -14,7 +14,7 @@ class AuthorizationBloc extends Bloc<AuthorizationEvent, AuthorizationState> {
       emit(AuthorizationLoading());
       final auth = await abstractUserModel.checkIfExists();
       if(auth == true){
-        emit(AuthorizationLoaded(authaccept: auth));
+        emit(AuthorizationLoaded());
       }
       else {
         emit(AuthorizationFailure());
