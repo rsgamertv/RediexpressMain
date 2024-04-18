@@ -173,7 +173,7 @@ class RegistrationWindowState extends State<Registration> {
                 Text('Already have an account? ', style: small_grey()),
                 TextButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/Authorization');
+                      Navigator.of(context).pushNamed('/MainPage');
                     },
                     child: Text(
                       'Sign in',

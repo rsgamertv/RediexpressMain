@@ -20,8 +20,6 @@ class Authorization extends StatefulWidget {
 class _AuthorizationState extends State<Authorization> {
   bool passwordVisible = false;
   bool isChecked = false;
-  UserModel userModel = UserModel(dio: Dio());
-  AbstractUserModel abstractUserModel = GetIt.I<AbstractUserModel>();
   final _authbloc = AuthorizationBloc(GetIt.I<AbstractUserModel>());
   final emailController = new TextEditingController();
   final passwordController = new TextEditingController();
@@ -32,7 +30,6 @@ class _AuthorizationState extends State<Authorization> {
   @override
   void initState() {
     super.initState();
-    GetIt.I<AbstractUserModel>();
     isChecked = false;
   }
   setRememberPassword(bool value){
@@ -47,24 +44,23 @@ class _AuthorizationState extends State<Authorization> {
     return BlocListener<AuthorizationBloc, AuthorizationState>(
       listener: (BuildContext context, AuthorizationState state) { 
         if(emailController.text.toString() != '' && emailController.text.toString() != null && passwordController.text.toString() != '' && passwordController.text.toString() != null){
-        if(state is AuthorizationLoading){
-          showLoadingCircle(context);
-        }
-        if(state is AuthorizationLoaded){
-          Navigator.of(context).pop();
-          Navigator.of(context).pushNamed('/MainPage');
-          showSnackBar(context, 'Вы успешно вошли');
-        }
-        if(state is AuthorizationFailure){
-          Navigator.of(context).pop();
-          Navigator.of(context).pushNamed('/Authorization');
-          showSnackBar(context, 'Не удалось зайти');
-          
-        }
+          if(state is AuthorizationLoading){
+            showLoadingCircle(context);
+          }
+          if(state is AuthorizationLoaded){
+            Navigator.of(context).pop();
+            Navigator.of(context).pushNamed('/MainPage');
+            showSnackBar(context, 'Вы успешно вошли');
+          }
+          if(state is AuthorizationFailure){
+            Navigator.of(context).pop();
+            //Navigator.of(context).pushNamed('/Authorization');
+            showSnackBar(context, 'Не удалось зайти');
+          }
         }
         else{
           Navigator.of(context).pop();
-          Navigator.of(context).pushNamed('/Authorization');
+          //Navigator.of(context).pushNamed('/Authorization');
           showSnackBar(context, 'Введите логин и пароль');
         }
       },
@@ -138,9 +134,9 @@ class _AuthorizationState extends State<Authorization> {
                     child: TextButton(
                       onPressed: () async{
                         SharedPreferences preferences =  await SharedPreferences.getInstance();
-                        abstractUserModel.email =
+                        GetIt.I<AbstractUserModel>().email =
                             emailController.text.toString();
-                        abstractUserModel.password =
+                        GetIt.I<AbstractUserModel>().password =
                             passwordController.text.toString();
                         bloccommand.add(AuthorizationEvent());
                         if(isChecked == true){
