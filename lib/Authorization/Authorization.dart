@@ -63,113 +63,115 @@ class _AuthorizationState extends State<Authorization> {
         }
       },
       child: Scaffold(
-        body: Container(
-          padding: EdgeInsets.fromLTRB(25, 170, 25, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Welcome Back',
-                style: Theme.of(context).textTheme.displayLarge,
-              ),
-              Text(
-                'Fill in your email and password to continue',
-                style: small_grey(),
-              ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
-              Text('Email Adress', style: small_grey()),
-              Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-              TextField(
-                decoration: field_decoration('***********@mail.com'),
-                controller: emailController,
-              ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 25, 0, 0)),
-              Text('Password', style: small_grey()),
-              Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-              TextField(
-                decoration: password_field_decoration(
-                    '***********', passwordVisible, updatePasswordType),
-                obscureText: passwordVisible,
-                controller: passwordController,
-              ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                Container(
-                  child: Row(
-                    children: [
-                      Checkbox(
-                      value: isChecked,
-                      onChanged: (newBool) {
-                        setState(() {
-                          print(newBool);
-                          isChecked = newBool!;
-                        });
-                      },
-                      activeColor: Theme.of(context).primaryColor,
-                    ),
-                      Text(
-                        'Remember password',
-                        style: small_grey(),
-                      ),
-                    ],
-                  ),
+        body: SafeArea(
+          child: Container(
+            padding: EdgeInsets.fromLTRB(25, 170, 25, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Welcome Back',
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed('/ForgotPassword');
-                    },
-                    child: Text(
-                      'Forgot Password?',
-                      style: button_blue(),
-                    ))
-              ]),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                Text(
+                  'Fill in your email and password to continue',
+                  style: small_grey(),
+                ),
+                Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+                Text('Email Adress', style: small_grey()),
+                Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+                TextField(
+                  decoration: field_decoration('***********@mail.com'),
+                  controller: emailController,
+                ),
+                Padding(padding: EdgeInsets.fromLTRB(0, 25, 0, 0)),
+                Text('Password', style: small_grey()),
+                Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+                TextField(
+                  decoration: password_field_decoration(
+                      '***********', passwordVisible, updatePasswordType),
+                  obscureText: passwordVisible,
+                  controller: passwordController,
+                ),
+                Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                   Container(
-                    decoration: filledboxdecoration(),
-                    child: TextButton(
-                      onPressed: () async{
-                        SharedPreferences preferences =  await SharedPreferences.getInstance();
-                        GetIt.I<AbstractUserModel>().email =
-                            emailController.text.toString();
-                        GetIt.I<AbstractUserModel>().password =
-                            passwordController.text.toString();
-                        bloccommand.add(AuthorizationEvent());
-                        if(isChecked == true){
-                          preferences.setString('email', emailController.text.toString());
-                          preferences.setString('password', passwordController.text.toString());
-                        }
-                        else {
-                          preferences.remove('email');
-                          preferences.remove('password');
-                        }
-                      },
-                      child: Text('Log in', style: button_white()),
+                    child: Row(
+                      children: [
+                        Checkbox(
+                        value: isChecked,
+                        onChanged: (newBool) {
+                          setState(() {
+                            print(newBool);
+                            isChecked = newBool!;
+                          });
+                        },
+                        activeColor: Theme.of(context).primaryColor,
+                      ),
+                        Text(
+                          'Remember password',
+                          style: small_grey(),
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Don\'t have an account?',
-                    style: small_grey(),
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed('/Registration');
+                        Navigator.of(context).pushNamed('/ForgotPassword');
                       },
                       child: Text(
-                        'Sign Up',
+                        'Forgot Password?',
                         style: button_blue(),
                       ))
-                ],
-              )
-            ],
+                ]),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      decoration: filledboxdecoration(),
+                      child: TextButton(
+                        onPressed: () async{
+                          SharedPreferences preferences =  await SharedPreferences.getInstance();
+                          GetIt.I<AbstractUserModel>().email =
+                              emailController.text.toString();
+                          GetIt.I<AbstractUserModel>().password =
+                              passwordController.text.toString();
+                          bloccommand.add(AuthorizationEvent());
+                          if(isChecked == true){
+                            preferences.setString('email', emailController.text.toString());
+                            preferences.setString('password', passwordController.text.toString());
+                          }
+                          else {
+                            preferences.remove('email');
+                            preferences.remove('password');
+                          }
+                        },
+                        child: Text('Log in', style: button_white()),
+                      ),
+                    )
+                  ],
+                ),
+                Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Don\'t have an account?',
+                      style: small_grey(),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/Registration');
+                        },
+                        child: Text(
+                          'Sign Up',
+                          style: button_blue(),
+                        ))
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

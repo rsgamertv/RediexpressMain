@@ -48,141 +48,143 @@ class RegistrationWindowState extends State<Registration> {
         }
       },
       child: Scaffold(
-          body: Container(
-        padding: EdgeInsets.fromLTRB(25, 50, 25, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text('Create an account',
-                style: Theme.of(context).textTheme.displayLarge),
-            Text('Complete the sign up process to get started',
-                style: small_grey()),
-            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Full name', style: small_grey()),
-                Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                TextField(
-                    controller: _fullNameController,
-                    decoration: field_decoration('Ivan Ivanov'))
-              ],
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Phone number', style: small_grey()),
-                Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                TextField(
-                    controller: _phoneNumberController,
-                    decoration: field_decoration('+7(999)999-99-99'))
-              ],
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Email address', style: small_grey()),
-                Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                TextField(
-                    controller: _emailController,
-                    decoration: field_decoration('********@mail.com'))
-              ],
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Password', style: small_grey()),
-                Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                TextField(
-                  controller: _firstPasswordController,
-                  decoration: password_field_decoration(
-                      '*******', passwordVisible, updatePasswordType),
-                  obscureText: passwordVisible,
-                )
-              ],
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Confirm password', style: small_grey()),
-                Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                TextField(
-                  controller: _secondPasswordController,
-                  decoration: password_field_decoration(
-                      '*******', passwordVisible, updatePasswordType),
-                  obscureText: passwordVisible,
-                )
-              ],
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Checkbox(
-                      value: isChecked,
-                      onChanged: (newBool) {
-                        setState(() {
-                          isChecked = newBool;
-                        });
-                      },
-                      activeColor: Theme.of(context).primaryColor,
-                    ),
-                    Text('By ticking this box, you agree to our ',
-                        style: small_grey()),
-                    Text('Terms ', style: small_orange()),
-                  ],
-                ),
-              ],
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
-            Container(
-              decoration: filledboxdecoration(),
-              height: 50,
-              child: TextButton(
-                onPressed: () {
-                  GetIt.I<AbstractUserModel>().email = _emailController.text.toString();
-                  GetIt.I<AbstractUserModel>().phoneNumber =
-                      _phoneNumberController.text.toString();
-                  GetIt.I<AbstractUserModel>().name = _fullNameController.text.toString();
-                  if (_firstPasswordController.text.toString() ==
-                      _secondPasswordController.text.toString()) {
-                    GetIt.I<AbstractUserModel>().password =
-                        _firstPasswordController.text.toString();
-                  } else {
-                    showAboutDialog(
-                        context: context,
-                        applicationLegalese: 'Введите одинаковые пароли');
-                  }
-                  bloccommand.add(RegistrationEvent());
-                },
-                child: Text('Sign Up', style: button_white()),
+          body: SafeArea(
+            child: Container(
+                    padding: EdgeInsets.fromLTRB(25, 50, 25, 0),
+                    child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text('Create an account',
+                  style: Theme.of(context).textTheme.displayLarge),
+              Text('Complete the sign up process to get started',
+                  style: small_grey()),
+              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Full name', style: small_grey()),
+                  Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+                  TextField(
+                      controller: _fullNameController,
+                      decoration: field_decoration('Ivan Ivanov'))
+                ],
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Already have an account? ', style: small_grey()),
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed('/MainPage');
-                    },
-                    child: Text(
-                      'Sign in',
-                      style: button_blue(),
-                    ))
-              ],
-            ),
-          ],
-        ),
-      )),
+              Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Phone number', style: small_grey()),
+                  Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+                  TextField(
+                      controller: _phoneNumberController,
+                      decoration: field_decoration('+7(999)999-99-99'))
+                ],
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Email address', style: small_grey()),
+                  Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+                  TextField(
+                      controller: _emailController,
+                      decoration: field_decoration('********@mail.com'))
+                ],
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Password', style: small_grey()),
+                  Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+                  TextField(
+                    controller: _firstPasswordController,
+                    decoration: password_field_decoration(
+                        '*******', passwordVisible, updatePasswordType),
+                    obscureText: passwordVisible,
+                  )
+                ],
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(0, 15, 0, 0)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Confirm password', style: small_grey()),
+                  Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
+                  TextField(
+                    controller: _secondPasswordController,
+                    decoration: password_field_decoration(
+                        '*******', passwordVisible, updatePasswordType),
+                    obscureText: passwordVisible,
+                  )
+                ],
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Checkbox(
+                        value: isChecked,
+                        onChanged: (newBool) {
+                          setState(() {
+                            isChecked = newBool;
+                          });
+                        },
+                        activeColor: Theme.of(context).primaryColor,
+                      ),
+                      Text('By ticking this box, you agree to our ',
+                          style: small_grey()),
+                      Text('Terms ', style: small_orange()),
+                    ],
+                  ),
+                ],
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
+              Container(
+                decoration: filledboxdecoration(),
+                height: 50,
+                child: TextButton(
+                  onPressed: () {
+                    GetIt.I<AbstractUserModel>().email = _emailController.text.toString();
+                    GetIt.I<AbstractUserModel>().phoneNumber =
+                        _phoneNumberController.text.toString();
+                    GetIt.I<AbstractUserModel>().name = _fullNameController.text.toString();
+                    if (_firstPasswordController.text.toString() ==
+                        _secondPasswordController.text.toString()) {
+                      GetIt.I<AbstractUserModel>().password =
+                          _firstPasswordController.text.toString();
+                    } else {
+                      showAboutDialog(
+                          context: context,
+                          applicationLegalese: 'Введите одинаковые пароли');
+                    }
+                    bloccommand.add(RegistrationEvent());
+                  },
+                  child: Text('Sign Up', style: button_white()),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Already have an account? ', style: small_grey()),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/MainPage');
+                      },
+                      child: Text(
+                        'Sign in',
+                        style: button_blue(),
+                      ))
+                ],
+              ),
+            ],
+                    ),
+                  ),
+          )),
     );
   }
 }
