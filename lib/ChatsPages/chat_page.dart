@@ -138,6 +138,7 @@ class _ChatPageState extends State<ChatPage> {
                         suffixIcon: IconButton(
                           onPressed: () {
                             _sendMessage();
+                            _controller.text = '';
                           },
                           icon: Icon(Icons.send),
                         ),
