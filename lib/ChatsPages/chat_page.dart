@@ -109,7 +109,7 @@ class _ChatPageState extends State<ChatPage> {
                     final message = messages[index];
 
                     return Row(
-                      mainAxisAlignment: (message.user_id != StaticModel.staticModel.id)
+                      mainAxisAlignment: (message.user_id != GetIt.I<AbstractUserModel>().id)
                           ? MainAxisAlignment.end
                           : MainAxisAlignment.start,
                       children: [
