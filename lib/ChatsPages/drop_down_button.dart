@@ -9,7 +9,7 @@ Widget getDropDownButton(context, ChatPageState chatPage){
       child: DropdownButton2(
         customButton: Icon(
           Icons.list,
-          size: 45,
+          size: 35,
         ),
         items: [
           ...MenuItems.items.map(

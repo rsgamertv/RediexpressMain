@@ -8,6 +8,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:sizer/sizer.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 import '../Models/UserModel/user_model.dart';
@@ -83,7 +84,12 @@ class ChatPageState extends State<ChatPage> {
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         actions: [
-          getDropDownButton(context, this),
+          Row(
+            children: [
+              getDropDownButton(context, this),
+              Padding(padding: EdgeInsets.only(right: 2.w))
+            ],
+          ),
         ],
       ),
       body: SafeArea(
@@ -162,22 +168,26 @@ class ChatPageState extends State<ChatPage> {
 
     final textColor = Colors.white;
 
-    return Align(
-      alignment: alignment,
-      child: Container(
-        constraints: BoxConstraints(maxWidth: size.width * 0.66),
-        padding: const EdgeInsets.all(8.0),
-        margin: const EdgeInsets.all(4.0),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(
-            8.0,
+    return GestureDetector(
+      onTap: (){
+      },
+      child: Align(
+        alignment: alignment,
+        child: Container(
+          constraints: BoxConstraints(maxWidth: size.width * 0.66),
+          padding: const EdgeInsets.all(8.0),
+          margin: const EdgeInsets.all(4.0),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(
+              8.0,
+            ),
           ),
-        ),
-        child: Text(
-          message.message ?? '',
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            color: textColor,
+          child: Text(
+            message.message ?? '',
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              color: textColor,
+            ),
           ),
         ),
       ),
