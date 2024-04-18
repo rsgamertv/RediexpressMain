@@ -20,13 +20,13 @@ class Authorization extends StatefulWidget {
 class _AuthorizationState extends State<Authorization> {
   bool passwordVisible = false;
   bool isChecked = false;
-  //final _authbloc = AuthorizationBloc(GetIt.I<AbstractUserModel>());
+
   final emailController = new TextEditingController();
   final passwordController = new TextEditingController();
 
   void updatePasswordType(bool passwordVisible) => setState(() {
-        this.passwordVisible = passwordVisible;
-    });
+      this.passwordVisible = passwordVisible;
+  });
 
   @override
   void initState() {
@@ -45,24 +45,20 @@ class _AuthorizationState extends State<Authorization> {
     final bloccommand = BlocProvider.of<AuthorizationBloc>(context);
     return BlocListener<AuthorizationBloc, AuthorizationState>(
       listener: (BuildContext context, AuthorizationState state) { 
-        if(emailController.text.toString() != '' && emailController.text.toString() != null && passwordController.text.toString() != '' && passwordController.text.toString() != null){
+        if(emailController.text.toString().length > 0 && emailController.text.toString() != null && passwordController.text.toString() != 0 && passwordController.text.toString().length > 0){
           if(state is AuthorizationLoading){
             showLoadingCircle(context);
           }
           else if(state is AuthorizationLoaded){
-            Navigator.of(context).pop();
             Navigator.of(context).pushNamed('/MainPage');
             showSnackBar(context, 'Вы успешно вошли');
           }
           else if(state is AuthorizationFailure){
             Navigator.of(context).pop();
-            //Navigator.of(context).pushNamed('/Authorization');
             showSnackBar(context, 'Не удалось зайти');
           }
         }
         else{
-          //Navigator.of(context).pop();
-          //Navigator.of(context).pushNamed('/Authorization');
           showSnackBar(context, 'Введите логин и пароль');
         }
       },
@@ -148,7 +144,6 @@ class _AuthorizationState extends State<Authorization> {
                         else {
                           preferences.remove('email');
                           preferences.remove('password');
-                          print('не вышло');
                         }
                       },
                       child: Text('Log in', style: button_white()),

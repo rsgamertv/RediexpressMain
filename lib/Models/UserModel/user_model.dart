@@ -19,27 +19,26 @@ class UserModel extends AbstractUserModel{
     );
     
     if(response.statusCode == 200){
-    final json = response.data as Map<String, dynamic>;
-    print('прошло');
-    this.id = json['data']['id'];
-    this.email = json['data']['email'];
-    this.password = json['data']['password'];
-    this.name = json['data']['name'];
-    return true;
+      final json = response.data as Map<String, dynamic>;
+
+      this.id = json['data']['id'];
+      this.email = json['data']['email'];
+      this.password = json['data']['password'];
+      this.name = json['data']['name'];
+
+      return true;
     } return false;} on DioException catch (error){
       if(error.response != null){
-        print('даже я ошибаюсь');
         return false;
       }
       else{
-        print('хз что');
         return false;
       }
     } catch (e){
-      print('другя ошибка');
       return false;
     }
   }
+
   @override
   Future<bool> register() async{
     final json = new Map<String,dynamic>();

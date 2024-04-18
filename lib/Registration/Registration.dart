@@ -25,7 +25,6 @@ class RegistrationWindowState extends State<Registration> {
   final _secondPasswordController = TextEditingController();
   final _fullNameController = TextEditingController();
   final _phoneNumberController = TextEditingController();
-  AbstractUserModel abstractUserModel = GetIt.I<AbstractUserModel>();
 
   void updatePasswordType(bool passwordVisible) => setState(() {
         this.passwordVisible = passwordVisible;
@@ -39,12 +38,12 @@ class RegistrationWindowState extends State<Registration> {
         if(state is RegistrationLoading){
           showLoadingCircle(context);
         }
-        if(state is REgistrationLoaded){
-          Navigator.of(context).pop();
+        else if(state is REgistrationLoaded){
           Navigator.of(context).pushNamed('/Authorization');
           showSnackBar(context, 'Вы успешно зарегегестрировались');
         }
-        if(state is RegistrationFailure){
+        else if(state is RegistrationFailure){
+          Navigator.of(context).pop();
           showSnackBar(context, 'Произошла ошибка');
         }
       },
@@ -149,13 +148,13 @@ class RegistrationWindowState extends State<Registration> {
               height: 50,
               child: TextButton(
                 onPressed: () {
-                  abstractUserModel.email = _emailController.text.toString();
-                  abstractUserModel.phoneNumber =
+                  GetIt.I<AbstractUserModel>().email = _emailController.text.toString();
+                  GetIt.I<AbstractUserModel>().phoneNumber =
                       _phoneNumberController.text.toString();
-                  abstractUserModel.name = _fullNameController.text.toString();
+                  GetIt.I<AbstractUserModel>().name = _fullNameController.text.toString();
                   if (_firstPasswordController.text.toString() ==
                       _secondPasswordController.text.toString()) {
-                    abstractUserModel.password =
+                    GetIt.I<AbstractUserModel>().password =
                         _firstPasswordController.text.toString();
                   } else {
                     showAboutDialog(

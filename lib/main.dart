@@ -51,13 +51,11 @@ import 'package:sizer/sizer.dart';
       abstractUserModel.password = password;
       final auth = await abstractUserModel.checkIfExists();
       if(auth == true){
-        print(' оно работает');
       }
       else if (auth == false){
         prefs.remove('email');
         prefs.remove('password');
         Navigator.of(context).pushNamed('/Authorization');
-        print('не те данные');
       }
       
     }
@@ -77,10 +75,10 @@ import 'package:sizer/sizer.dart';
           create: (context) => ThemeCubit(repository: repo),
         ),
         BlocProvider(
-          create: (context) => RegistrationBloc(GetIt.I<AbstractUserModel>()),
+          create: (context) => RegistrationBloc(),
         ),
         BlocProvider(create: 
-        (context) => AuthorizationBloc(GetIt.I<AbstractUserModel>())
+        (context) => AuthorizationBloc()
         )
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
