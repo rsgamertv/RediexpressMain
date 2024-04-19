@@ -4,6 +4,7 @@ import 'package:RediExpress/Boards/on_board_3.dart';
 import 'package:RediExpress/ChatsPages/chats_page.dart';
 import 'package:RediExpress/ForgotPassword/new_password.dart';
 import 'package:RediExpress/Main/home_page.dart';
+import 'package:RediExpress/Main/track_page.dart';
 import 'package:RediExpress/Packages/packageinfo_map.dart';
 import 'package:RediExpress/Second/card_page.dart';
 import 'package:RediExpress/Second/chats_page.dart';
@@ -14,7 +15,6 @@ import '../Boards/on_board_2.dart';
 import '../ForgotPassword/forgot_password.dart';
 import '../ForgotPassword/otp_password.dart';
 import '../Main/main_page.dart';
-import '../Packages/all_packages.dart';
 import '../Packages/package_info.dart';
 import '../Packages/package_info_base.dart';
 import '../Packages/ready_package_info.dart';
@@ -30,11 +30,11 @@ final routes = {
         '/MainPage': (context) => MainPage(),
         '/NewPassword':(context) => NewPasswordSet(),
         '/OtpPassword': (context) => OTPPassword(),
-        '/AllPackages': (context) => AllPackages(),
         '/PackageInfoBase': (context) => PackageInfoBase(),
         '/PackageInfo': (context) => PackageInfo(),
         '/ReadyPackageInfo': (context) => ReadyPackageInfo(null),
         '/CardsPage':(context) => CardPage(),
         '/ChatsPage':(context) => ChatsPage(),
-        '/PackageInfoMap':(context) => PackageInfoMap()
+        '/PackageInfoMap':(context) => PackageInfoMap(),
+        '/AllPackages':(context) => TrackPage()
 };
