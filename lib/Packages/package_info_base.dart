@@ -20,10 +20,10 @@ class PackageInfoBaseState extends State<PackageInfoBase> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Send a package',style: large_black(),),
+        title: Text('Send a package',style: Theme.of(context).textTheme.displayMedium,),
         automaticallyImplyLeading: true,
         elevation: 2,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).cardColor,
         shadowColor: Colors.grey,
         centerTitle: true,
       ),

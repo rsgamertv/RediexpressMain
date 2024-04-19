@@ -63,7 +63,19 @@ class _TrackPageState extends State<TrackPage> {
                     ],
                   ),
           ) : Container(
-            child: Center(child: Text('No packages')),
+            child: Column(
+              children: [
+                Flexible(child: Center(child: Text('No packages'))),
+                 Container(
+                              padding: EdgeInsets.only(left: 5.w, right: 5.w,top: 2.h,bottom: 2.h),
+                              width: 100.h,
+                              child: FloatingActionButton(onPressed: (){
+                                Navigator.of(context).pushNamed('/PackageInfoBase');
+                                
+                              }, child: Text('Add package')),
+                            ),
+              ],
+            ),
         ),
       ),
     );

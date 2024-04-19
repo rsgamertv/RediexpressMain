@@ -1,3 +1,4 @@
+import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:flutter/material.dart';
 
 BoxDecoration filledboxdecoration(){
@@ -7,11 +8,11 @@ return BoxDecoration(
 );
 
 }
-BoxDecoration decoration(){
+BoxDecoration decoration(Color colors){
   return BoxDecoration(
     border: Border.all(
       width: 3,
-      color: Colors.blueAccent
+      color: colors,
     ),
     borderRadius: BorderRadius.circular(5),
   );
@@ -54,6 +55,17 @@ InputDecoration field_outlined_decoration(String hint){
   return InputDecoration(
       border: UnderlineInputBorder(),
       hintText: hint,
+  );
+}
+InputDecoration field_outlined_decoration_small_font(String hint){
+  return InputDecoration(
+      border: UnderlineInputBorder(),
+      hintText: hint,
+      hintStyle:  const TextStyle(
+                    fontSize: 15,
+            color: Colors.grey,
+            fontWeight: FontWeight.w500
+      )
   );
 }
 

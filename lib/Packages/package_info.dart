@@ -33,53 +33,53 @@ class _PackageInfoState extends State<PackageInfo> {
                       color: Theme.of(context).primaryColor,
                   ),
                   Padding(padding: EdgeInsets.fromLTRB(5, 0, 0, 0)),
-                  Text('Origin details', style: large_black(),)
+                  Text('Origin details', style: Theme.of(context).textTheme.displayMedium,)
                 ],
               ),
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Country'),
+                decoration: field_outlined_decoration_small_font('Country'),
                 controller: originCountryController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('State'),
+                decoration: field_outlined_decoration_small_font('State'),
                 controller: originStateController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Address'),
+                decoration: field_outlined_decoration_small_font('Address'),
                 controller: originAddressController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Phone number'),
+                decoration: field_outlined_decoration_small_font('Phone number'),
                 controller: originPhoneNumberController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(child:
               TextField(
-                decoration: field_outlined_decoration('Others'),
+                decoration: field_outlined_decoration_small_font('Others'),
                 controller: originOthersController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
-              flex: 7,
+              flex: 5,
               child: Row(
                 children: [
                   ImageIcon(
@@ -87,85 +87,84 @@ class _PackageInfoState extends State<PackageInfo> {
                     color: Theme.of(context).primaryColor,
                   ),
                   Padding(padding: EdgeInsets.fromLTRB(5, 0, 0, 0)),
-                  Text('Destination details', style: large_black(),)
+                  Text('Destination details', style: Theme.of(context).textTheme.displayMedium,)
                 ],
               ),
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Country'),
+                decoration: field_outlined_decoration_small_font('Country'),
                 controller: destinationCountryController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('State'),
+                decoration: field_outlined_decoration_small_font('State'),
                 controller: destinationStateController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Address'),
+                decoration: field_outlined_decoration_small_font('Address'),
                 controller: destinationAddressController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Phone number'),
+                decoration: field_outlined_decoration_small_font('Phone number'),
                 controller: destinationPhoneNumberController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(child:
             TextField(
-              decoration: field_outlined_decoration('Others'),
+              decoration: field_outlined_decoration_small_font('Others'),
               controller:  destinationOthersController,
             ),
-              flex: 4,
+              flex: 5,
             ),
-            Expanded(child: Container(), flex: 1,),
+            Expanded(child: Container(), flex: 2,),
             Expanded(
-              flex: 7,
-              child: Text('Package details', style: large_black(),),
+              flex: 5,
+              child: Text('Package details', style: Theme.of(context).textTheme.displayMedium,),
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Package items'),
+                decoration: field_outlined_decoration_small_font('Package items'),
                 controller: packageItemsController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Weight of items(kg)'),
+                decoration: field_outlined_decoration_small_font('Weight of items(kg)'),
                 controller: weightOfItemsController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 1,),
             Expanded(
               child: TextField(
-                decoration: field_outlined_decoration('Worth of items'),
+                decoration: field_outlined_decoration_small_font('Worth of items'),
                 controller: worthOfItemsController,
               ),
-              flex: 4,
+              flex: 5,
             ),
             Expanded(child: Container(), flex: 2,),
             Expanded(
-              flex: 7,
-              child: Text('Select delivery type', style: large_black(),)
+              flex: 5,
+              child: Text('Select delivery type', style: Theme.of(context).textTheme.displayMedium,)
             ),
-            Expanded(child: Container(), flex: 2,),
             Expanded(
               flex: 12,
               child: Row(
@@ -173,7 +172,7 @@ class _PackageInfoState extends State<PackageInfo> {
                 children: [
                   Expanded(
                     child: Container(
-                      decoration: decoration(),
+                      decoration: decoration(Theme.of(context).dividerColor),
                       child: ElevatedButton.icon(
                           onPressed: (){
                             CurrentPackageInfoBase.packageInfoBase!.changeView(ReadyPackageInfo(PackageModel(originCountry: 'country', originState: 'state', originAddress: 'address', originPhoneNumber: '1234', originOthers: '-',
@@ -223,7 +222,7 @@ class _PackageInfoState extends State<PackageInfo> {
                 ],
               ),
             ),
-            Expanded(child: Container(), flex: 2,),
+            Expanded(child: Container(), flex: 3,),
           ],
         ),
       )
