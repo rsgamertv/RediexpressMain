@@ -30,7 +30,7 @@ class OnBoard1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        decoration: decoration(Theme.of(context).dividerColor),
+                        decoration: decoration(),
                         width: 120,
                         height: 50,
                         child:

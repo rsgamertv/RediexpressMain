@@ -8,11 +8,11 @@ return BoxDecoration(
 );
 
 }
-BoxDecoration decoration(Color colors){
+BoxDecoration decoration(){
   return BoxDecoration(
     border: Border.all(
       width: 3,
-      color: colors,
+      color: Colors.blueAccent,
     ),
     borderRadius: BorderRadius.circular(5),
   );

@@ -172,7 +172,7 @@ class _PackageInfoState extends State<PackageInfo> {
                 children: [
                   Expanded(
                     child: Container(
-                      decoration: decoration(Theme.of(context).dividerColor),
+                      decoration: decoration(),
                       child: ElevatedButton.icon(
                           onPressed: (){
                             CurrentPackageInfoBase.packageInfoBase!.changeView(ReadyPackageInfo(PackageModel(originCountry: 'country', originState: 'state', originAddress: 'address', originPhoneNumber: '1234', originOthers: '-',
@@ -199,7 +199,9 @@ class _PackageInfoState extends State<PackageInfo> {
                   Expanded(child: Container(), flex: 1,),
                   Expanded(
                     child: Container(
-                      decoration: white_decoration(),
+                      decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                        ),
                       child: ElevatedButton.icon(
                         onPressed: (){},
                         icon: Icon(
@@ -211,7 +213,7 @@ class _PackageInfoState extends State<PackageInfo> {
                           style: button_grey(),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
+                          backgroundColor: Theme.of(context).dividerColor,
                           shape: LinearBorder(
                           ),
                         ),
