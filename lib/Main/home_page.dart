@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(child: Container(),flex: 5,),
                   Expanded(child: GestureDetector(
                     onTap: (){
-                      Navigator.of(context).pushNamed('/MainPage');
+                      Navigator.of(context).pushNamed('/PackageInfoBase');
                     },
                     child: Container(
                       padding: EdgeInsets.only(left: 10),

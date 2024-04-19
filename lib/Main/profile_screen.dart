@@ -294,6 +294,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       onTap: ()async{
                         SharedPreferences preferences = await SharedPreferences.getInstance();
                         preferences.remove('email');
+                        preferences.remove('password');
+                        preferences.remove('IsDarkThemeKey');
                         Navigator.of(context).pushNamed('/Authorization');
                       },
                       child: 
