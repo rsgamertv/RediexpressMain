@@ -114,7 +114,7 @@ class _ChatsPageState extends State<ChatsPage> {
 
   void initAllUsers() async{
     final response = await Dio().get(
-      'http://$ip/users/'
+      'http://$ip/users/all'
     );
 
     final data = response.data as Map<String, dynamic>;

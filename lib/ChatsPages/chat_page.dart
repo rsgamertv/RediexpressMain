@@ -215,8 +215,9 @@ class ChatPageState extends State<ChatPage> {
       if(msg['message'].toString().length > 0) {
         messages.add (
             MessageModel(user_id: msg['user_id'], message: msg['message'])
-        );
+       );
       }
+      print(messages);
     });
 
     setState(() {
