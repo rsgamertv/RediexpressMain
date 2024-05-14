@@ -2,8 +2,9 @@ import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/StaticClasses/current_user_class.dart';
 import 'package:RediExpress/core/Styles/style.dart';
 import 'package:RediExpress/ThemesFolder/text_styles.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
+@RoutePage()
 class NewPasswordSet extends StatefulWidget{
   @override
   State<NewPasswordSet> createState() => _NewPasswordSetState();

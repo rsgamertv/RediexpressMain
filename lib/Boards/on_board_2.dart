@@ -1,7 +1,9 @@
 import 'package:RediExpress/ThemesFolder/text_styles.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:RediExpress/core/Styles/Style.dart';
+@RoutePage()
 class OnBoard2 extends StatelessWidget { 
    @override
   Widget build(BuildContext context) {

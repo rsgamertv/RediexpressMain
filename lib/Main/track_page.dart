@@ -1,9 +1,10 @@
 import 'package:RediExpress/ThemesFolder/theme.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
-
+@RoutePage()
 class TrackPage extends StatefulWidget {
   const TrackPage({super.key});
 

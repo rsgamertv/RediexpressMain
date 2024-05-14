@@ -115,7 +115,7 @@ void initDependencies(){
             theme:
             state.brightness == Brightness.light ? lightTheme : darkTheme,
             debugShowCheckedModeBanner: false,
-            routes: routes,
+  
           );
           });
         },

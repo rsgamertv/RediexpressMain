@@ -2,9 +2,10 @@ import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/StaticClasses/current_user_class.dart';
 import 'package:RediExpress/core/Styles/style.dart';
 import 'package:RediExpress/ThemesFolder/text_styles.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+@RoutePage()
 class OTPPassword extends StatefulWidget{
   @override
   State<OTPPassword> createState() => _OTPPasswordState();

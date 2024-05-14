@@ -6,9 +6,10 @@ import 'package:RediExpress/Main/profile_screen.dart';
 import 'package:RediExpress/Main/track_page.dart';
 import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:RediExpress/ThemesFolder/theme.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+@RoutePage()
 class MainPage extends StatefulWidget{
   @override
   State<MainPage> createState() => _MainPageState();

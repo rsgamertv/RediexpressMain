@@ -3,13 +3,14 @@ import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/Registration/bloc/registration_bloc.dart';
 import 'package:RediExpress/helpers.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:RediExpress/core/Styles/Style.dart';
 import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-
+@RoutePage()
 class Registration extends StatefulWidget {
   const Registration({super.key});
 

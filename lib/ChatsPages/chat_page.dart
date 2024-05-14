@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/Models/UserModel/static_model.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,7 +16,7 @@ import '../Models/UserModel/user_model.dart';
 import '../main.dart';
 import 'drop_down_button.dart';
 import 'message_model.dart';
-
+@RoutePage()
 class ChatPage extends StatefulWidget{
   @override
   State<ChatPage> createState() => ChatPageState(room_id, other_user);

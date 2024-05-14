@@ -3,13 +3,14 @@ import 'package:RediExpress/Models/UserModel/static_model.dart';
 import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/core/Styles/style.dart';
 import 'package:RediExpress/main.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import 'chat_page.dart';
-
+@RoutePage()
 class ChatsPage extends StatefulWidget {
   const ChatsPage({super.key});
 

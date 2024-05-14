@@ -4,6 +4,7 @@ import 'package:RediExpress/ThemesFolder/text_styles.dart';
 import 'package:RediExpress/ThemesFolder/theme.dart';
 import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';
 import 'package:RediExpress/main.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+@RoutePage()
 class ProfileScreen extends StatefulWidget{
   const ProfileScreen({super.key}); 
 
