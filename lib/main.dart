@@ -15,12 +15,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
+import 'package:talker_bloc_logger/talker_bloc_logger_observer.dart';
+import 'package:talker_bloc_logger/talker_bloc_logger_settings.dart';
+import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
+import 'package:talker_flutter/talker_flutter.dart';
 
   String ip = '83.147.245.57:8080';
   var email;
   var password;
   AbstractUserModel abstractUserModel = GetIt.I<AbstractUserModel>();
   Future<void> main() async{
+  initDependencies();
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   email = prefs.getString('email');
@@ -30,6 +35,27 @@ import 'package:sizer/sizer.dart';
      MyApp(
       preferences: prefs,),
   );
+}
+void initDependencies(){
+  final talker = TalkerFlutter.init();
+  GetIt.I.registerSingleton<Talker>(talker);
+  final talkerDioLogger = TalkerDioLogger(
+    talker: talker
+  );
+  final dio = Dio();
+  dio.interceptors.add(talkerDioLogger);
+  talker.info('App Started');
+  Bloc.observer = TalkerBlocObserver(
+    talker: talker,
+    settings: const TalkerBlocLoggerSettings(
+      printCreations: true,
+      printClosings: true,
+      printStateFullData: true,
+      printChanges: true,
+      printEventFullData: true
+    )
+  );
+
 }
 
   class MyApp extends StatefulWidget {
