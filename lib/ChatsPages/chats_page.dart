@@ -42,7 +42,7 @@ class _ChatsPageState extends State<ChatsPage> {
           children: [
             Expanded(child: Container(),flex: 3,),
             Expanded(child: Container(
-              color: Theme.of(context).errorColor,
+              color: Theme.of(context).hintColor,
             child: TextFormField(
               decoration: searchFieldDecoration('Search'),
             ),  
@@ -76,7 +76,7 @@ class _ChatsPageState extends State<ChatsPage> {
         },
       child: Container(
         decoration: BoxDecoration(
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).dialogBackgroundColor,
             borderRadius: BorderRadius.circular(15),
             border: Border.all(
                 width: 2,

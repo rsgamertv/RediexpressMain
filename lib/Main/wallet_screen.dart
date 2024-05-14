@@ -64,7 +64,7 @@ class _WalletScreenState extends State<WalletScreen> {
               ),),
               Expanded(child: Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).errorColor,
+                  color: Theme.of(context).hintColor,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Column(

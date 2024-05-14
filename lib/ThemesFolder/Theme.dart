@@ -5,8 +5,8 @@ final lightTheme = ThemeData(
         cardColor: Colors.white,
         canvasColor: Colors.white,
         dividerColor: Colors.blueAccent,
-        errorColor: Colors.grey.withOpacity(0.4),
-        backgroundColor: Colors.transparent,
+        hintColor: Colors.grey.withOpacity(0.4),
+        dialogBackgroundColor: Colors.transparent,
         hoverColor: Colors.grey.withOpacity(0.2),
         iconTheme: const IconThemeData(
           color: Colors.grey,
@@ -77,12 +77,12 @@ final lightTheme = ThemeData(
       );
 final darkTheme = ThemeData(
         primaryColor: Colors.blueAccent,
-        errorColor: Color.fromRGBO(0, 27, 59, 1),
+        hintColor: Color.fromRGBO(0, 27, 59, 1),
         hoverColor: Color.fromRGBO(0, 27, 59, 1),
         canvasColor: Color.fromRGBO(0, 13, 29, 1),
         cardColor: Color.fromRGBO(0, 27, 59, 1), 
         dividerColor: Color.fromRGBO(0, 27, 59, 1),
-        backgroundColor: Color.fromRGBO(0, 27, 59, 1),
+        dialogBackgroundColor: Color.fromRGBO(0, 27, 59, 1),
         iconTheme: const IconThemeData(
           color: Colors.white
         ),

@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
               Expanded(child: Container(),flex: 2,),
               Expanded(
                 child: Container(
-                  color: Theme.of(context).errorColor,
+                  color: Theme.of(context).hintColor,
                   child: TextFormField(
                     decoration: searchFieldDecoration('Search services'),
                   ),

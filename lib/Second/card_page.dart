@@ -43,7 +43,7 @@ class _CardPageState extends State<CardPage> {
                       BoxShadow(
                         offset: Offset(0, 2),
                         blurRadius: 6,
-                        color: Theme.of(context).errorColor
+                        color: Theme.of(context).hintColor
                       )
                     ]
                   ),
@@ -63,7 +63,7 @@ class _CardPageState extends State<CardPage> {
                       BoxShadow(
                         offset: Offset(0, 2),
                         blurRadius: 6,
-                        color: Theme.of(context).errorColor
+                        color: Theme.of(context).hintColor
                       )
                     ]
                   ),
