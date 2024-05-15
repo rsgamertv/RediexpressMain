@@ -1,8 +1,8 @@
 import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/Models/UserModel/user_model.dart';
-import 'package:RediExpress/ThemesFolder/text_styles.dart';
+import 'package:RediExpress/themesFolder/text_styles.dart';
 import 'package:RediExpress/ThemesFolder/theme.dart';
-import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';
+import 'package:RediExpress/themesFolder/cubit/theme_cubit.dart';
 import 'package:RediExpress/main.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';

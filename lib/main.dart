@@ -6,7 +6,7 @@ import 'package:RediExpress/Models/UserModel/abstract_user_model.dart';
 import 'package:RediExpress/Models/UserModel/user_model.dart';
 import 'package:RediExpress/Registration/bloc/registration_bloc.dart';
 import 'package:RediExpress/ThemesFolder/theme.dart';
-import 'package:RediExpress/ThemesFolder/cubit/theme_cubit.dart';
+import 'package:RediExpress/themesFolder/cubit/theme_cubit.dart';
 import 'package:RediExpress/core/routes.dart';
 import 'package:RediExpress/repositorires/Settings/settings_interface.dart';
 import 'package:dio/dio.dart';

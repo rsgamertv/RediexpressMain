@@ -21,9 +21,9 @@ import 'package:RediExpress/Main/main_page.dart' as _i6;
 import 'package:RediExpress/Main/profile_screen.dart' as _i12;
 import 'package:RediExpress/Main/track_page.dart' as _i14;
 import 'package:RediExpress/Main/wallet_screen.dart' as _i15;
-import 'package:RediExpress/Registration/Registration.dart' as _i13;
-import 'package:RediExpress/Second/card_page.dart' as _i1;
-import 'package:RediExpress/Second/chats_page.dart' as _i2;
+import 'package:RediExpress/registration/Registration.dart' as _i13;
+import 'package:RediExpress/second/card_page.dart' as _i1;
+import 'package:RediExpress/second/chats_page.dart' as _i2;
 
 abstract class $AppRouter extends _i16.RootStackRouter {
   $AppRouter({super.navigatorKey});
