@@ -22,9 +22,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         controller: _pagecontroller,
-        children: [
+        children: const [
           HomePage(),
           WalletScreen(),
           TrackPage(),
