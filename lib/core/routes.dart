@@ -41,14 +41,10 @@
 import 'package:RediExpress/Main/main_page.dart';
 import 'package:auto_route/auto_route.dart';
 
-part 'routerflutter clean
 
-flutter pub get
-
-flutter packages pub run build_runner build --delete-conflicting-outputs .gr.dart';
-
+import 'package:RediExpress/core/routes.gr.dart';
 @AutoRouterConfig()
-class AppRouter extends _$AppRfouter {
+class AppRouter extends $AppRouter {
 
   @override
   List<AutoRoute> get routes => [
